@@ -91,7 +91,7 @@
     <p style="margin-top: 1.5em; font-size: 0.6em; color: #ccc;">Yoni Lavi</p>
     <p class="dim" style="margin-top: 1em;">Planning Workshop — SME Perspective<br>March 2026</p>
     <aside class="notes">
-      Opening framing: there are only two fundamental limitations left — everything else is tractable engineering progressing at breakneck speed. That's the thesis.
+      Thesis: only two fundamental limitations left, but the agent/orchestration layers more than compensate. That's the story.
     </aside>
   </section>
 
@@ -112,7 +112,7 @@
       · was 4 min in early 2024
     </p>
     <aside class="notes">
-      ARC-AGI2 is the benchmark designed to resist brute-force AI approaches — Gemini 3 Deep Think now hits average human performance. METR measures how long a task AI can reliably complete — doubling roughly every 4 months. At this rate, week-long autonomous tasks are plausible by late 2026, month-long by 2027. Reasoning and reliability are improving rapidly and predictably — they're not the bottleneck.
+      ARC-AGI2 resists brute-force — Gemini 3 now hits average human. METR doubles every ~4 months: week-long tasks plausible by late 2026. Models aren't the bottleneck.
     </aside>
   </section>
 
@@ -132,17 +132,16 @@
         </ul>
       </div>
       <p style="margin-top: 1em; font-size: 0.65em; color: #ffd54f; text-align: center;">
-        Everything else is tractable engineering — moving at extraordinary speed.
+        Everything else is tractable engineering — and it more than compensates.
       </p>
     </div>
     <aside class="notes">
-      These two may ultimately be solved by the same breakthrough. Both are active research areas. Engineering workarounds (compaction, memory files, RAG) are already shrinking the context discontinuity fast. Everything else — tool access, safety, parallelism, persistence — is tractable engineering that doesn't require fundamental research. The following slides show what that engineering looks like.
+      The key point: even without solving these, the agent and orchestration layers compensate. The next slides show how much is possible already.
     </aside>
   </section>
 
   <section>
     <h2>MCP & Skills</h2>
-    <p class="subtitle">The foundations of agentic AI</p>
     <div class="two-col" style="margin-top: 1.5em; font-size: 0.9em;">
       <div>
         <h3>MCP</h3>
@@ -158,7 +157,7 @@
       </div>
     </div>
     <aside class="notes">
-      MCP is the open standard that lets AI connect to any tool or data source — now adopted everywhere. Skills are the complementary standard: they encode what to do (workflows, playbooks), while MCP encodes how to connect. Both are central to the Claws architecture we'll see shortly. Also progressing rapidly: parallel agent teams (Anthropic ran 5 parallel Claude agents to build a C compiler, coordinating on a shared codebase), context compaction, and permission hooks. This is delegation and orchestration, not autocomplete.
+      Two open standards powering everything that follows. MCP connects AI to tools; Skills encode workflows. Adopted across the ecosystem. Also: parallel agent teams, context compaction, permission hooks.
     </aside>
   </section>
 
@@ -177,11 +176,11 @@
         </p>
       </div>
       <div class="visual">
-        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.svg" alt="Claude" class="slide-img-sm" style="opacity: 0.7;">
+        <img src="claude-ai-icon.svg" alt="Claude" class="slide-img-sm" style="opacity: 0.7;">
       </div>
     </div>
     <aside class="notes">
-      Key insight: the same patterns that transformed coding apply to all knowledge work. Cowork is Claude Code for non-developers — you assign work and review results, not chat back and forth. This is where the agent pattern starts reaching business professionals, not just engineers. The interaction model shifts from "chatbot" to "coworker."
+      Same patterns that transformed coding, now for all knowledge work. You assign work and review results. Agent patterns reaching beyond developers.
     </aside>
   </section>
 
@@ -203,7 +202,7 @@
       <li>An agent you <em>assign work to</em> — not a tool you orchestrate</li>
     </ul>
     <aside class="notes">
-      Devin represents a different paradigm — not a tool you orchestrate but an autonomous agent you assign work to. 67% of PRs merged is up from 34% a year ago — real improvement, real production use. Deployed at major financial institutions. Excels at clear-requirement tasks a junior engineer would take 4-8 hours on. This is the "AI employee" model in practice today.
+      Different paradigm: you assign work, not orchestrate a tool. 67% merged PRs (was 34%). Deployed at major banks. Excels at 4–8h junior-level tasks.
     </aside>
   </section>
 
@@ -226,7 +225,7 @@
       </div>
     </div>
     <aside class="notes">
-      Karpathy's layering model: LLMs → LLM Agents → Claws. A Claw is a locally-hosted AI assistant wired to your tools — calendar, email, browser, messaging. Not a chat window but a persistent orchestrator. Full Karpathy quote: "Claws are now a new layer on top of LLM agents, taking the orchestration, scheduling, context, tool calls and a kind of persistence to a next level." OpenClaw is the full-featured version (~400K lines, broad integrations, moving to open-source foundation). NanoClaw is Karpathy's minimalist alternative — ~4K lines, designed to be fully understandable by both humans and AI agents. This is where MCP and Skills become critical infrastructure.
+      Not a chat window but a persistent orchestrator. Karpathy: "orchestration, scheduling, context, tool calls and persistence to a next level." OpenClaw = full-featured; NanoClaw = fits in your head and the AI's.
     </aside>
   </section>
 
@@ -254,7 +253,7 @@
       </div>
     </div>
     <aside class="notes">
-      This is a key observation: AI agents work well for code because code is structured and verifiable — tests, compilers, type checkers. Non-coding knowledge work — emails, documents, planning — lacks this. But AI itself will close this gap. Using its own software engineering capabilities, AI will accelerate digital transformation — structuring previously unstructured work, making it API-addressable and testable. This is putting on steroids a trend that's been running for decades. The question of whether AI handles "fuzzy" work well becomes less relevant as less work remains fuzzy. For genuine edge cases, AI systems can escalate — including spawning human contractors via platforms like Upwork.
+      Code works for AI because it's verifiable. AI will use its SWE skills to structure everything else too — APIs, tests, automation. Less and less work stays fuzzy.
     </aside>
   </section>
 
@@ -285,7 +284,7 @@
       </div>
     </div>
     <aside class="notes">
-      The Claws approach raises a security question — giving AI persistent access to your personal credentials is inherently exposed. A more natural evolution: long-lived AI workers with their own accounts, their own email, calendar, project tools. You share specific items as you would with a human colleague. OpenAI Frontier, launched Feb 2026, is already building exactly this — an enterprise platform to deploy AI agents as workers with onboarding, shared business context, and permissions. Uber, Intuit, State Farm among the first customers. BCG, McKinsey, Accenture, Capgemini are Frontier Alliance partners deploying it. The METR trajectory grounds this: doubling every ~123 days means week-long autonomous tasks are plausible by late 2026. Accounts tagged as AI, linked to human principals, clear escalation paths. We're already seeing this in customer service. The organizational plumbing is simple; the cultural adjustment is the bigger shift.
+      Shift from AI-as-tool to AI-as-coworker — autonomous, long-running, with its own identity. OpenAI Frontier (openai.com/index/introducing-openai-frontier/) validates this is where the industry is heading.
     </aside>
   </section>
 
@@ -298,26 +297,26 @@
       <tr><td>Orchestration (2026+)</td><td>Configure → Oversee</td><td>Systems thinking, trust calibration</td></tr>
     </table>
     <aside class="notes">
-      The skillset is shifting. Prompt engineering was 2023's core skill. Now it's about understanding tool ecosystems (MCP, Skills), agent coordination, and context engineering. By 2026+, it's systems thinking and trust calibration — knowing when and how much to delegate. Steve Yegge's framing captures it well: 2024 was the year of the Chatbot, 2025 the year of the Agent, 2026 is the year of Orchestration. His Gas Town project runs 20-30 parallel Claude Code instances organized into hierarchical colonies.
+      Skillset is shifting from prompting to orchestration. Yegge: 2024 = Chatbot, 2025 = Agent, 2026 = Orchestration. His Gas Town runs 20–30 parallel agents.
     </aside>
   </section>
 
   <section>
-    <h2>Questions for the Workshop</h2>
+    <h2>Discussion Points</h2>
     <ul>
-      <li><strong>From prompting to orchestrating</strong> — course implications?</li>
-      <li><strong>"AI team member" model</strong> — management & oversight over execution</li>
-      <li><strong>Curriculum agility</strong> — "Claws" didn't exist 6 months ago</li>
+      <li>How should courses shift from prompting to orchestration?</li>
+      <li>If AI structures all work, what roles are we training people for?</li>
+      <li>Does "professional competence" become management and oversight?</li>
+      <li>How do we teach when "Clawdbot" is 4 months old and already renamed?</li>
     </ul>
     <aside class="notes">
-      These are provocations, not recommendations. Open the floor here. The key tension: we need to teach durable skills (systems thinking, trust calibration, task decomposition) in a landscape where specific tools change every few months. Also worth noting: if AI turns non-coding work into coding work, and AI team members become the norm, what does "professional competence" even mean in 2-3 years?
-    </aside>
+      Provocations, not recommendations. Open the floor. Clawdbot launched Nov 2025, rebranded to OpenClaw by Feb 2026.
   </section>
 
   <section>
     <h2>Thank You</h2>
     <aside class="notes">
-      Q&A time. Full briefing document and source links available on request.
+      Briefing document and sources available on request.
     </aside>
   </section>
 
