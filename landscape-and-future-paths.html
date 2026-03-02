@@ -128,23 +128,27 @@
   </section>
 
   <section>
-    <h2>MCP & Skills</h2>
-    <div class="two-col" style="margin-top: 1.5em;">
+    <h2>The Agent Stack</h2>
+    <p class="dim">Claude Code established the pattern</p>
+    <div class="two-col" style="margin-top: 1em;">
       <div>
-        <h3>MCP</h3>
+        <h3>Open Standards</h3>
         <ul>
-          <li>Open standard: AI ↔ tools & data</li>
+          <li>MCP: AI ↔ tools & data</li>
+          <li>Skills: workflows & playbooks</li>
         </ul>
       </div>
       <div>
-        <h3>Skills</h3>
+        <h3>Agent Capabilities</h3>
         <ul>
-          <li>Open standard: AI workflows & playbooks</li>
+          <li>Parallel agent teams</li>
+          <li>Context management & memory</li>
+          <li>Safety via permission hooks</li>
         </ul>
       </div>
     </div>
     <aside class="notes">
-      MCP (Model Context Protocol) is an open standard connecting AI to external tools and data - now adopted across the ecosystem (ChatGPT, VS Code, Goose). MCP Apps return interactive UI inside conversations. Skills follow the open Agent Skills standard for encoding workflows and playbooks - hot-reload, public repository, cross-tool. Together these are the building blocks for everything that follows. Also worth mentioning: parallel agent teams (up to 5 sub-agents on shared codebases - Anthropic built a C compiler this way), context compaction (PreCompact hooks cut info loss by ~30%), and expanded permission hooks (14 lifecycle events, three handler types).
+      Claude Code established the pattern now reshaping everything: give an AI agent real tools and let it do work, not just talk about work. MCP (Model Context Protocol) is adopted across the ecosystem (ChatGPT, VS Code, Goose). Skills follow the open Agent Skills standard - hot-reload, public repository, cross-tool. Parallel teams: up to 5 sub-agents on shared codebases - Anthropic built a C compiler this way. Context compaction: PreCompact hooks cut info loss by ~30%. Permission hooks expanded to 14 lifecycle events with three handler types (bash, LLM-based, full agentic verifiers). This is where the "copilot" metaphor breaks down - we're talking about delegation and orchestration, not autocomplete.
     </aside>
   </section>
 
