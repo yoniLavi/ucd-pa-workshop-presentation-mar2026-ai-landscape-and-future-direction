@@ -176,15 +176,9 @@
   <section>
     <h2>Devin: The "AI Employee"</h2>
     <p class="dim">Cognition AI - 18 months in</p>
-    <div class="two-col" style="margin-top: 1em;">
-      <div style="text-align: center;">
-        <span class="stat">67%</span>
-        <span class="stat-label">of PRs merged<br>(was 34% a year ago)</span>
-      </div>
-      <div style="text-align: center;">
-        <span class="stat">4×</span>
-        <span class="stat-label">faster at<br>problem-solving</span>
-      </div>
+    <div style="text-align: center; margin-top: 1em;">
+      <span class="stat">67%</span>
+      <span class="stat-label">of PRs merged (was 34% a year ago)</span>
     </div>
     <ul style="margin-top: 1em; text-align: left;">
       <li>Goldman Sachs, Santander, Nubank</li>
@@ -196,21 +190,39 @@
   </section>
 
   <section>
+    <h2>Agent Swarms</h2>
+    <div class="img-right" style="margin-top: 1em;">
+      <div class="content">
+        <ul>
+          <li>Anthropic built a <strong>C compiler</strong> with parallel agents</li>
+          <li><strong>Gas Town</strong> (Yegge) - 20-30 parallel agents</li>
+        </ul>
+      </div>
+      <div class="visual">
+        <img src="gastown.webp" alt="Gas Town" class="slide-img-sm" style="max-height: 180px; max-width: 300px;">
+      </div>
+    </div>
+    <aside class="notes">
+      Steve Yegge's Gas Town takes multi-agent to the extreme: 20-30 parallel Claude Code instances organized into hierarchical colonies. Work expressed as "Beads" (atomic units) in "Molecules" (workflow graphs), persisted in Git. Anthropic's own team built a C compiler using parallel Claude Code agents on a shared codebase. The developer role transforms from individual coder to factory operator managing agent swarms. Yegge's framing: 2024 = Chatbot, 2025 = Agent, 2026 = Orchestration.
+    </aside>
+  </section>
+
+  <section>
     <h2>Claws <span class="emoji">🦞</span></h2>
-    <p class="dim">Karpathy - February 2026</p>
-    <p style="font-size: 0.75em; color: #90caf9; margin-top: 0.5em;">LLMs → LLM Agents → <strong>Claws</strong></p>
-    <ul style="margin-top: 0.5em;">
-      <li>Persistent AI orchestrator wired to your tools</li>
-      <li>Built on MCP & Skills</li>
-    </ul>
-    <div class="two-col" style="margin-top: 1em; font-size: 0.85em;">
+    <div class="two-col" style="margin-top: 1em; justify-content: center; gap: 4em; font-size: 0.85em;">
       <div>
-        <h3>OpenClaw</h3>
+        <h3>OpenClaw (aka Clawdbot)</h3>
       </div>
       <div>
         <h3>NanoClaw</h3>
       </div>
     </div>
+    <ul style="margin-top: 1em;">
+      <li>Persistent AI orchestrator wired to your tools</li>
+      <li>Built on MCP & Skills</li>
+    </ul>
+    <p style="font-size: 0.75em; color: #90caf9; margin-top: 1em;">LLMs → LLM Agents → <strong>Claws</strong></p>
+    <p class="dim">Karpathy - February 2026</p>
     <aside class="notes">
       Karpathy's layering: LLMs, then LLM Agents, now Claws - taking orchestration, scheduling, context, and persistence to the next level. A Claw is a locally-hosted AI assistant wired to your personal tools. OpenClaw (~400K lines, moving to open-source foundation) vs NanoClaw (~4K lines, "fits in my head and that of AI agents"). Karpathy rightly flags the security risk of giving AI persistent access to your email, calendar, and credentials - which motivates the "own account" model on the next slides.
     </aside>
@@ -278,10 +290,10 @@
   <section>
     <h2>The Landscape Shift</h2>
     <table style="margin-top: 1em;">
-      <tr><th>Era</th><th>Interaction</th><th>Core Skill</th></tr>
-      <tr><td>Chat (2023)</td><td>Prompt → Response</td><td>Prompt engineering</td></tr>
-      <tr><td>Agents (2024–25)</td><td>Delegate → Review</td><td>Task decomposition, context engineering</td></tr>
-      <tr><td>Orchestration (2026+)</td><td>Configure → Oversee</td><td>Systems thinking, trust calibration</td></tr>
+      <tr><th>Era</th><th>Core Skill</th></tr>
+      <tr><td>Chat (2023)</td><td>Prompt engineering</td></tr>
+      <tr><td>Agents (2024–25)</td><td>Task decomposition, context engineering</td></tr>
+      <tr><td>Orchestration (2026+)</td><td>Systems thinking, trust calibration</td></tr>
     </table>
     <aside class="notes">
       Framing from Steve Yegge: 2024 = Chatbot, 2025 = Agent, 2026 = Orchestration. His Gas Town framework runs 20-30 parallel Claude Code instances organized into hierarchical colonies. Work expressed as "Beads" (atomic units) in "Molecules" (workflow graphs), persisted in Git. The developer role transforms from individual coder to factory operator managing agent swarms.
@@ -291,10 +303,9 @@
   <section>
     <h2>Discussion Points</h2>
     <ul>
-      <li>How should courses shift from prompting to orchestration?</li>
-      <li>If AI structures all work, what roles are we training people for?</li>
-      <li>Does "professional competence" become management and oversight?</li>
-      <li>How do we teach when "Clawdbot" is 4 months old and already renamed?</li>
+      <li>From prompting to orchestration</li>
+      <li>Professional competence as management and oversight</li>
+      <li>"Clawdbot" is 4 months old and already renamed</li>
     </ul>
     <aside class="notes">
       These are provocations for the group, not recommendations. The pace point is real: Clawdbot launched Nov 2025 and was already rebranded to OpenClaw by Feb 2026. Six months ago, "Claws" wasn't a concept and Cowork didn't exist. How do we build curriculum that stays relevant in a landscape moving this fast?
