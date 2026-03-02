@@ -107,9 +107,9 @@
         <span class="stat-label">Claude Opus 4.6 — METR time horizon<br>50% success on tasks of this length</span>
       </div>
     </div>
-    <p style="text-align: center; margin-top: 1.5em; font-size: 0.65em; color: #aaa;">
+    <p style="text-align: center; margin-top: 1.5em; font-size: 0.65em; color: #ccc;">
       Doubling every <span class="highlight">~123 days</span>
-      · 4 min in early 2024 → 14.5h in Feb 2026
+      · was 4 min in early 2024
     </p>
     <aside class="notes">
       ARC-AGI2 is the benchmark designed to resist brute-force AI approaches — Gemini 3 Deep Think now hits average human performance. METR measures how long a task AI can reliably complete — doubling roughly every 4 months. At this rate, week-long autonomous tasks are plausible by late 2026, month-long by 2027. Reasoning and reliability are improving rapidly and predictably — they're not the bottleneck.
@@ -122,15 +122,13 @@
       <div>
         <h3>1. Long-term Context Management</h3>
         <ul>
-          <li>Finite context windows — no true memory across sessions</li>
-          <li>Hit the boundary → discontinuity, loss of thread</li>
+          <li>No true memory across sessions</li>
         </ul>
       </div>
       <div style="margin-top: 1em;">
         <h3>2. Online Learning</h3>
         <ul>
-          <li>No weight updates at inference time</li>
-          <li>Can't learn new concepts or preferences — every session is a blank slate</li>
+          <li>Can't learn from experience — every session is a blank slate</li>
         </ul>
       </div>
       <p style="margin-top: 1em; font-size: 0.65em; color: #ffd54f; text-align: center;">
@@ -144,22 +142,19 @@
 
   <section>
     <h2>MCP & Skills</h2>
-    <p class="subtitle">The foundations of agentic AI</p>
     <div class="two-col" style="margin-top: 1em; font-size: 0.9em;">
       <div>
         <h3>MCP (Model Context Protocol)</h3>
         <ul>
-          <li>Open standard connecting AI to tools & data</li>
-          <li>Adopted across the ecosystem: ChatGPT, VS Code, Goose…</li>
-          <li>MCP Apps (Jan 2026): interactive UI in-chat</li>
+          <li>Open standard: AI ↔ tools & data</li>
+          <li>Adopted everywhere: ChatGPT, VS Code, Goose…</li>
         </ul>
       </div>
       <div>
         <h3>Skills</h3>
         <ul>
           <li>Agent's "playbook" — open standard</li>
-          <li>Encode <em>what to do</em>; MCP encodes <em>how to connect</em></li>
-          <li>Hot-reload, public repository, cross-tool</li>
+          <li><em>What to do</em> vs MCP's <em>how to connect</em></li>
         </ul>
       </div>
     </div>
@@ -174,11 +169,9 @@
     <div class="img-right" style="margin-top: 0.8em;">
       <div class="content">
         <ul>
-          <li>Claude Code's foundations, designed for <span class="highlight">non-developers</span></li>
-          <li>Scoped folder access — reads, edits, creates files</li>
-          <li>Parallel task queuing</li>
-          <li>External systems via MCP & skills</li>
-          <li>Pro, Team, and Enterprise plans</li>
+          <li>Claude Code's agent patterns, for <span class="highlight">non-developers</span></li>
+          <li>Reads, edits, creates files · parallel tasks</li>
+          <li>External systems via MCP & Skills</li>
         </ul>
         <p style="margin-top: 1em; color: #90caf9; font-size: 0.8em;">
           <strong>Coworker</strong>, not chatbot.
@@ -186,7 +179,6 @@
       </div>
       <div class="visual">
         <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.svg" alt="Claude" class="slide-img-sm" style="opacity: 0.7;">
-        <span class="img-caption">Built on Claude Code's foundations</span>
       </div>
     </div>
     <aside class="notes">
@@ -209,8 +201,7 @@
     </div>
     <ul style="margin-top: 1em; text-align: left;">
       <li>Goldman Sachs, Santander, Nubank</li>
-      <li>Clear-requirement tasks · 4–8h junior engineer work</li>
-      <li style="color: #90caf9;">An agent you <em>assign work to</em> — not a tool you orchestrate</li>
+      <li>An agent you <em>assign work to</em> — not a tool you orchestrate</li>
     </ul>
     <aside class="notes">
       Devin represents a different paradigm — not a tool you orchestrate but an autonomous agent you assign work to. 67% of PRs merged is up from 34% a year ago — real improvement, real production use. Deployed at major financial institutions. Excels at clear-requirement tasks a junior engineer would take 4-8 hours on. This is the "AI employee" model in practice today.
@@ -220,34 +211,19 @@
   <section>
     <h2>Claws <span class="emoji">🦞</span></h2>
     <p class="dim">Karpathy — February 2026</p>
-    <div class="img-right" style="margin-top: 0.5em;">
-      <div class="content">
-        <p style="font-size: 0.75em; color: #90caf9; margin-bottom: 0.6em;">LLMs → LLM Agents → <strong>Claws</strong></p>
-        <ul>
-          <li>Persistent AI orchestrator wired to your tools</li>
-          <li>Calendar, email, browser, messaging (WhatsApp, Slack, Signal…)</li>
-          <li>Built on MCP & Skills</li>
-        </ul>
-        <div class="two-col" style="margin-top: 0.8em; font-size: 0.85em;">
-          <div>
-            <h3 style="margin-bottom: 0.2em;">OpenClaw</h3>
-            <ul>
-              <li>~400K lines · broad integrations</li>
-              <li style="color: #888;">Moving to open-source foundation</li>
-            </ul>
-          </div>
-          <div>
-            <h3 style="margin-bottom: 0.2em;">NanoClaw</h3>
-            <ul>
-              <li>~4K lines · containerized</li>
-              <li style="color: #888;">"Fits in my head" — Karpathy</li>
-            </ul>
-          </div>
-        </div>
+    <p style="font-size: 0.75em; color: #90caf9; margin-top: 0.5em;">LLMs → LLM Agents → <strong>Claws</strong></p>
+    <ul style="margin-top: 0.5em;">
+      <li>Persistent AI orchestrator wired to your tools</li>
+      <li>Calendar, email, browser, messaging — built on MCP & Skills</li>
+    </ul>
+    <div class="two-col" style="margin-top: 1em; font-size: 0.85em;">
+      <div>
+        <h3>OpenClaw</h3>
+        <ul><li>~400K lines · broad integrations</li></ul>
       </div>
-      <div class="visual">
-        <img class="slide-img-sm" src="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text.png" alt="OpenClaw logo" style="max-width: 160px;">
-        <span class="img-caption">Formerly Clawdbot</span>
+      <div>
+        <h3>NanoClaw</h3>
+        <ul><li>~4K lines · "fits in my head"</li></ul>
       </div>
     </div>
     <aside class="notes">
@@ -260,11 +236,9 @@
     <div class="img-right" style="margin-top: 0.5em;">
       <div class="content">
         <ul>
-          <li>AI agents work well for code — it's <span class="highlight">structured and verifiable</span></li>
-          <li>AI will use its SWE capabilities to close the gap for non-coding work</li>
-          <li>Make everything API-addressable, testable, automatable</li>
-          <li style="color: #90caf9;">Digital transformation on steroids</li>
-          <li style="color: #aaa;">Edge cases? Escalate — including spawning human contractors</li>
+          <li>Code works because it's <span class="highlight">structured and verifiable</span></li>
+          <li>AI will structure non-coding work the same way</li>
+          <li>Digital transformation on steroids</li>
         </ul>
       </div>
       <div class="visual">
@@ -290,17 +264,12 @@
     <div style="display: flex; gap: 2em; align-items: flex-start; margin-top: 0.5em;">
       <div style="flex: 1;">
         <ul>
-          <li><strong>Long-lived AI workers with their own accounts</strong></li>
-          <li>Own email, calendar, project tools — scoped access</li>
+          <li><strong>AI workers with their own accounts</strong> — email, calendar, tools</li>
           <li>Assign work, review output — like a human colleague</li>
-        </ul>
-        <ul style="margin-top: 0.8em;">
-          <li style="color: #90caf9;"><strong>OpenAI Frontier</strong> (Feb 2026) — already building this</li>
-          <li style="color: #aaa;">Onboarding, shared context, permissions</li>
-          <li style="color: #aaa;">Uber, Intuit, State Farm among first customers</li>
+          <li><strong>OpenAI Frontier</strong> (Feb 2026) — Uber, Intuit, State Farm</li>
         </ul>
         <p style="font-size: 0.65em; color: #ffd54f; margin-top: 0.8em;">
-          The organizational plumbing is simple. The cultural shift is the bigger part.
+          The plumbing is simple. The cultural shift is the bigger part.
         </p>
       </div>
       <div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.4em; padding-top: 0.5em;">
@@ -329,8 +298,8 @@
       <tr><td>Agents (2024–25)</td><td>Delegate → Review</td><td>Task decomposition, context engineering</td></tr>
       <tr><td>Orchestration (2026+)</td><td>Configure → Oversee</td><td>Systems thinking, trust calibration</td></tr>
     </table>
-    <p class="dim" style="margin-top: 1em; text-align: center;">
-      Yegge's framing: 2024 = Chatbot · 2025 = Agent · 2026 = <strong>Orchestration</strong>
+    <p style="margin-top: 1em; text-align: center; font-size: 0.65em; color: #ccc;">
+      Yegge: 2024 = Chatbot · 2025 = Agent · 2026 = <strong style="color: #ffd54f;">Orchestration</strong>
     </p>
     <aside class="notes">
       The skillset is shifting. Prompt engineering was 2023's core skill. Now it's about understanding tool ecosystems (MCP, Skills), agent coordination, and context engineering. By 2026+, it's systems thinking and trust calibration — knowing when and how much to delegate. Steve Yegge's framing captures it well: 2024 was the year of the Chatbot, 2025 the year of the Agent, 2026 is the year of Orchestration. His Gas Town project runs 20-30 parallel Claude Code instances organized into hierarchical colonies.
@@ -340,11 +309,10 @@
   <section>
     <h2>Questions for the Workshop</h2>
     <ul>
-      <li><strong>From prompting to orchestrating</strong> — how does course structure reflect this?</li>
-      <li><strong>Non-coders need this now</strong> — agent patterns are a general professional skill</li>
-      <li><strong>AI will structure the unstructured</strong> — what does this mean for the roles we train people for?</li>
-      <li><strong>The "AI team member" model</strong> — competence shifts toward management and oversight</li>
-      <li><strong>Curriculum agility</strong> — "Claws" didn't exist six months ago</li>
+      <li><strong>From prompting to orchestrating</strong> — course implications?</li>
+      <li><strong>Non-coders need this now</strong></li>
+      <li><strong>"AI team member" model</strong> — management over execution</li>
+      <li><strong>Curriculum agility</strong> — "Claws" didn't exist 6 months ago</li>
     </ul>
     <aside class="notes">
       These are provocations, not recommendations. Open the floor here. The key tension: we need to teach durable skills (systems thinking, trust calibration, task decomposition) in a landscape where specific tools change every few months. Also worth noting: if AI turns non-coding work into coding work, and AI team members become the norm, what does "professional competence" even mean in 2-3 years?
