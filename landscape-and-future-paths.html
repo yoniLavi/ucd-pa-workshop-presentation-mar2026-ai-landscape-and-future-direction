@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current Landscape & Future Paths</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+  <style>
+    :root {
+      --r-background-color: #1a1a2e;
+      --r-main-color: #e0e0e0;
+      --r-heading-color: #ffffff;
+      --r-link-color: #64b5f6;
+    }
+    .reveal { background-color: var(--r-background-color); }
+    .reveal h1, .reveal h2, .reveal h3 { color: var(--r-heading-color); text-transform: none; font-family: system-ui, -apple-system, sans-serif; }
+    .reveal h1 { font-size: 2.2em; }
+    .reveal h2 { font-size: 1.6em; }
+    .reveal h3 { font-size: 1.2em; color: #90caf9; }
+    .reveal p, .reveal li { color: var(--r-main-color); font-family: system-ui, -apple-system, sans-serif; font-size: 0.75em; line-height: 1.5; }
+    .reveal ul { list-style: none; padding-left: 0; }
+    .reveal ul li::before { content: "\2192\00a0"; color: #64b5f6; font-weight: bold; }
+    .reveal ul ul li::before { content: "\00b7\00a0"; color: #90caf9; }
+    .reveal blockquote { border-left: 4px solid #64b5f6; padding: 0.5em 1em; background: rgba(100, 181, 246, 0.08); font-style: italic; font-size: 0.8em; }
+    .reveal blockquote p { color: #bbdefb; }
+    .reveal .subtitle { color: #90caf9; font-size: 0.6em; margin-top: 0.5em; }
+    .reveal .dim { color: #888; font-size: 0.65em; }
+    .reveal .highlight { color: #ffd54f; font-weight: bold; }
+    .reveal .stat { font-size: 2em; color: #64b5f6; font-weight: bold; display: block; margin: 0.3em 0; }
+    .reveal .stat-label { font-size: 0.55em; color: #aaa; }
+    .reveal table { margin: 0.5em auto; border-collapse: collapse; font-size: 0.65em; }
+    .reveal table th { background: rgba(100, 181, 246, 0.2); color: #90caf9; padding: 0.5em 1em; border-bottom: 2px solid #64b5f6; text-align: left; }
+    .reveal table td { padding: 0.5em 1em; border-bottom: 1px solid #333; color: #ddd; text-align: left; }
+    .reveal .two-col { display: flex; gap: 2em; align-items: flex-start; }
+    .reveal .two-col > div { flex: 1; }
+    .reveal .emoji { font-size: 1.5em; }
+    .reveal .source { color: #666; font-size: 0.45em; position: absolute; bottom: 1em; left: 50%; transform: translateX(-50%); }
+    .reveal .fragment.fade-in-then-semi-out.visible:not(.current-fragment) { opacity: 0.4; }
+    .slide-number { color: #555 !important; }
+
+    /* Persistent UCD PA logo */
+    .ucd-logo {
+      position: fixed;
+      top: 18px;
+      right: 20px;
+      height: 40px;
+      opacity: 0.6;
+      z-index: 100;
+      pointer-events: none;
+      filter: brightness(1.8) contrast(0.9);
+    }
+
+    /* Slide image styling */
+    .slide-img {
+      max-height: 160px;
+      max-width: 220px;
+      border-radius: 8px;
+      opacity: 0.9;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+    }
+    .slide-img-sm {
+      max-height: 100px;
+      max-width: 160px;
+      border-radius: 6px;
+      opacity: 0.85;
+      object-fit: contain;
+      filter: drop-shadow(0 3px 8px rgba(0,0,0,0.3));
+    }
+    .img-right {
+      display: flex;
+      gap: 1.5em;
+      align-items: flex-start;
+    }
+    .img-right > .content { flex: 1; min-width: 0; }
+    .img-right > .visual {
+      flex: 0 0 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+      padding-top: 0.5em;
+    }
+    .visual .img-caption {
+      font-size: 0.45em;
+      color: #666;
+      text-align: center;
+      max-width: 200px;
+    }
+
+    /* Logo cluster for ecosystem slides */
+    .logo-cluster {
+      display: flex;
+      gap: 1.5em;
+      align-items: center;
+      justify-content: center;
+      margin: 1em 0;
+      flex-wrap: wrap;
+    }
+    .logo-cluster img {
+      height: 50px;
+      opacity: 0.8;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    }
+    .logo-cluster .logo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3em;
+    }
+    .logo-cluster .logo-label {
+      font-size: 0.45em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Persistent UCD Professional Academy logo (local copy) -->
+<img class="ucd-logo" src="ucd-pa-logo.svg" alt="UCD Professional Academy">
+
+<div class="reveal">
+<div class="slides">
+
+  <!-- ============ TITLE ============ -->
+  <section>
+    <h1>Current Landscape<br>& Future Paths</h1>
+    <p class="subtitle">AI Beyond the Chat Window</p>
+    <p style="margin-top: 1.5em; font-size: 0.6em; color: #ccc;">Yoni Lavi</p>
+    <p class="dim" style="margin-top: 1em;">Planning Workshop — SME Perspective<br>March 2026</p>
+  </section>
+
+  <!-- ============ 1. THE TWO REAL LIMITATIONS ============ -->
+  <section>
+    <section>
+      <h2>How capable are the models?</h2>
+      <div class="two-col" style="margin-top: 1em;">
+        <div style="text-align: center;">
+          <span class="stat">84.6%</span>
+          <span class="stat-label">Gemini 3 Deep Think on ARC-AGI2<br>≈ average human · $13.62 per run</span>
+        </div>
+        <div style="text-align: center;">
+          <span class="stat">14.5h</span>
+          <span class="stat-label">Claude Opus 4.6 — METR time horizon<br>50% success on tasks of this length</span>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 1.5em; font-size: 0.65em; color: #aaa;">
+        METR time horizon doubling every <span class="highlight">~123 days</span><br>
+        (4 min in early 2024 → 14.5 hours in Feb 2026)
+      </p>
+    </section>
+
+    <section>
+      <h2>Only Two Fundamental Limitations</h2>
+      <div style="margin-top: 1em;">
+        <div class="fragment fade-in-then-semi-out">
+          <h3>1. Long-term Context Management</h3>
+          <p>Finite context windows. No true memory across sessions.<br>
+          Hit the boundary → discontinuity, loss of thread.</p>
+        </div>
+        <div class="fragment fade-in-then-semi-out" style="margin-top: 1em;">
+          <h3>2. Online Learning</h3>
+          <p>No weight updates at inference time. Can't learn new concepts,<br>
+          skills, or preferences in a lasting way. Every session is a blank slate.</p>
+        </div>
+        <p class="fragment" style="margin-top: 1em; color: #ffd54f; font-size: 0.7em; text-align: center;">
+          These may ultimately be solved by the same breakthrough.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Everything Else Is<br>Tractable Engineering</h2>
+      <p style="margin-top: 0.5em; font-size: 0.7em; color: #aaa; text-align: center;">
+        Not easy — but no research breakthroughs needed.
+      </p>
+      <table style="margin-top: 1em;">
+        <tr><th>Challenge</th><th>Engineering Solution</th></tr>
+        <tr class="fragment"><td>Tool access</td><td>MCP (Model Context Protocol)</td></tr>
+        <tr class="fragment"><td>Knowledge & workflows</td><td>Skills</td></tr>
+        <tr class="fragment"><td>Working memory</td><td>Compaction & memory hooks</td></tr>
+        <tr class="fragment"><td>Safety</td><td>Permission systems & hooks</td></tr>
+        <tr class="fragment"><td>Parallelism</td><td>Agent teams</td></tr>
+        <tr class="fragment"><td>Persistence</td><td>Claws</td></tr>
+      </table>
+      <p class="fragment" style="text-align: center; margin-top: 1em; font-size: 0.7em;">
+        All moving at <span class="highlight">extraordinary speed</span>.
+      </p>
+    </section>
+  </section>
+
+  <!-- ============ 2. CLAUDE CODE ECOSYSTEM ============ -->
+  <section>
+    <section>
+      <h2>The Claude Code Ecosystem</h2>
+      <p class="subtitle">What rapid engineering looks like</p>
+      <div style="margin-top: 1.5em;">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.svg" alt="Claude AI" style="height: 80px; opacity: 0.8; filter: drop-shadow(0 2px 8px rgba(100,181,246,0.3));">
+      </div>
+      <p style="margin-top: 1em;">The pattern that's reshaping everything:</p>
+      <p style="font-size: 0.9em; color: #ffd54f; text-align: center; margin-top: 0.5em;">
+        Give an AI agent real tools.<br>Let it <em>do</em> work, not just talk about work.
+      </p>
+    </section>
+
+    <section>
+      <h2>The Building Blocks</h2>
+      <div class="two-col" style="font-size: 0.9em;">
+        <div>
+          <h3>MCP</h3>
+          <ul>
+            <li>Open standard — tools & data</li>
+            <li>Adopted: ChatGPT, VS Code, Goose…</li>
+            <li>MCP Apps: interactive UI in-chat</li>
+          </ul>
+          <h3 style="margin-top: 0.8em;">Context & Compacting</h3>
+          <ul>
+            <li>PreCompact hooks: −30% info loss</li>
+            <li>Selective context editing</li>
+            <li>Auto-memory across sessions</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Skills</h3>
+          <ul>
+            <li>Agent's "playbook" — open standard</li>
+            <li>Hot-reload (v2.1, Jan 2026)</li>
+            <li>Complementary to MCP</li>
+          </ul>
+          <h3 style="margin-top: 0.8em;">Permissions & Hooks</h3>
+          <ul>
+            <li>7 → 14 lifecycle events</li>
+            <li>Bash / LLM prompt / agentic verifiers</li>
+            <li>Safety scaffolding for autonomy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Parallel Agents & Teams</h2>
+      <p style="margin-top: 0.5em;">Single-agent work hit a ceiling.</p>
+      <ul style="margin-top: 1em;">
+        <li>Up to 5 simultaneous sub-agents on shared codebase</li>
+        <li>Specialize, coordinate via shared task lists, claim work autonomously</li>
+        <li>Anthropic built a C compiler this way</li>
+      </ul>
+      <p class="fragment" style="margin-top: 1.5em; text-align: center; font-size: 0.85em; color: #ffd54f;">
+        This isn't autocomplete anymore.<br>
+        It's <em>delegation and orchestration</em>.
+      </p>
+    </section>
+  </section>
+
+  <!-- ============ 3. EXPANDING ECOSYSTEM ============ -->
+  <section>
+    <section>
+      <h2>The Expanding Ecosystem</h2>
+      <p class="subtitle">From code to everything</p>
+      <div class="logo-cluster" style="margin-top: 2em;">
+        <div class="logo-item">
+          <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.svg" alt="Claude" style="height: 45px;">
+          <span class="logo-label">Cowork</span>
+        </div>
+        <div class="logo-item">
+          <span style="font-size: 2.5em;">🏭</span>
+          <span class="logo-label">Gas Town</span>
+        </div>
+        <div class="logo-item">
+          <span style="font-size: 2.5em;">🤖</span>
+          <span class="logo-label">Devin</span>
+        </div>
+        <div class="logo-item">
+          <span style="font-size: 2.5em;">🦞</span>
+          <span class="logo-label">Claws</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Claude Cowork</h2>
+      <p class="dim">Research preview — January 2026</p>
+      <div class="img-right" style="margin-top: 0.8em;">
+        <div class="content">
+          <p>Same foundations as Claude Code, designed for <span class="highlight">non-developers</span>.</p>
+          <ul style="margin-top: 0.8em;">
+            <li>Scoped folder access — reads, edits, creates files</li>
+            <li>Parallel task queuing</li>
+            <li>External systems via MCP & skills</li>
+            <li>Pro, Team, and Enterprise plans</li>
+          </ul>
+          <p class="fragment" style="margin-top: 1em; color: #90caf9; font-size: 0.8em;">
+            Interaction model: <strong>coworker</strong>, not chatbot.
+          </p>
+        </div>
+        <div class="visual">
+          <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.svg" alt="Claude" class="slide-img-sm" style="opacity: 0.7;">
+          <span class="img-caption">Built on Claude Code's foundations</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Gas Town & Agent Swarms</h2>
+      <p class="dim">Steve Yegge — January 2026</p>
+      <div class="img-right" style="margin-top: 0.8em;">
+        <div class="content">
+          <ul>
+            <li><strong>20–30 parallel Claude Code instances</strong> in hierarchical colonies</li>
+            <li>Work as "Beads" (atomic units) → "Molecules" (workflow graphs)</li>
+            <li>All persisted in Git</li>
+          </ul>
+          <p class="fragment" style="margin-top: 1em; font-size: 0.75em;">
+            Developer → <span class="highlight">"factory operator managing agent swarms"</span>
+          </p>
+          <p class="fragment dim" style="margin-top: 0.8em;">
+            Yegge's framing: 2024 = Chatbot · 2025 = Agent · 2026 = <strong>Orchestration</strong>
+          </p>
+        </div>
+        <div class="visual">
+          <!-- Gas Town colony architecture diagram -->
+          <div style="background: rgba(100,181,246,0.06); border: 1px solid #334; border-radius: 10px; padding: 1em 0.8em; font-size: 0.42em; color: #90caf9; text-align: center; width: 180px;">
+            <div style="font-weight: bold; color: #ffd54f; margin-bottom: 0.5em;">🏭 Gas Town</div>
+            <div style="border: 1px solid #445; border-radius: 6px; padding: 0.4em; margin-bottom: 0.4em;">
+              <div style="color: #aaa;">Town Level</div>
+              <div>Mayor · Deacon · Dogs</div>
+            </div>
+            <div style="color: #555; margin-bottom: 0.3em;">↓ dispatches ↓</div>
+            <div style="border: 1px solid #445; border-radius: 6px; padding: 0.4em; margin-bottom: 0.4em;">
+              <div style="color: #aaa;">Rig Level</div>
+              <div>Crew · Polecats · Witness</div>
+            </div>
+            <div style="color: #555; margin-bottom: 0.3em;">↓ produces ↓</div>
+            <div style="border: 1px solid #445; border-radius: 6px; padding: 0.4em;">
+              <div style="color: #aaa;">Work Units</div>
+              <div>Beads → Molecules</div>
+            </div>
+          </div>
+          <span class="img-caption">Colony hierarchy</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Devin: The "AI Employee"</h2>
+      <p class="dim">Cognition — 18 months in</p>
+      <div class="two-col" style="margin-top: 1em;">
+        <div style="text-align: center;">
+          <span class="stat">67%</span>
+          <span class="stat-label">of PRs merged<br>(was 34% a year ago)</span>
+        </div>
+        <div style="text-align: center;">
+          <span class="stat">4×</span>
+          <span class="stat-label">faster at<br>problem-solving</span>
+        </div>
+      </div>
+      <p style="margin-top: 1em; text-align: center; font-size: 0.7em; color: #aaa;">
+        Deployed at Goldman Sachs, Santander, Nubank<br>
+        Excels at clear-requirement tasks (4–8h junior engineer work)
+      </p>
+      <p class="fragment" style="margin-top: 0.8em; text-align: center; font-size: 0.75em; color: #90caf9;">
+        Not a tool you orchestrate — an agent you <em>assign work to</em>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Claws <span class="emoji">🦞</span></h2>
+      <p class="dim">Karpathy — February 2026</p>
+      <div class="img-right" style="margin-top: 0.5em;">
+        <div class="content">
+          <blockquote style="padding: 0.3em 0.8em; font-size: 0.7em;">
+            <p style="margin: 0;">LLMs → LLM Agents → <strong>Claws</strong></p>
+            <p style="margin: 0.3em 0 0 0;">"Claws are now a new layer on top of LLM agents, taking the orchestration, scheduling, context, tool calls and a kind of persistence to a next level."</p>
+          </blockquote>
+          <div class="two-col fragment" style="margin-top: 0.6em; font-size: 0.85em;">
+            <div>
+              <h3 style="margin-bottom: 0.2em;">OpenClaw</h3>
+              <p style="font-size: 0.7em; line-height: 1.4;">~400K lines · WhatsApp, Telegram, Slack, Signal, iMessage…<br>
+              <span style="color: #888;">→ open-source foundation</span></p>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 0.2em;">NanoClaw</h3>
+              <p style="font-size: 0.7em; line-height: 1.4;">~4K lines · containerized<br>
+              "Fits in my head and that of AI agents" — Karpathy</p>
+            </div>
+          </div>
+        </div>
+        <div class="visual">
+          <img class="slide-img-sm" src="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text.png" alt="OpenClaw logo" style="max-width: 160px;">
+          <span class="img-caption">Formerly Clawdbot</span>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ============ 4. WHERE THIS IS GOING ============ -->
+  <section>
+    <section>
+      <h2>Where This Is Going</h2>
+      <p class="subtitle">A view toward 2027</p>
+    </section>
+
+    <section>
+      <h2>The Context Discontinuity<br>Is Shrinking</h2>
+      <div class="img-right" style="margin-top: 0.8em;">
+        <div class="content">
+          <ul>
+            <li><strong>Letta / MemGPT</strong> — LLM manages its own memory like an OS manages RAM/disk. Git-based context repositories. Skill learning in token space.</li>
+            <li><strong>Architectural research</strong> — non-transformer / hybrid architectures may bypass the window entirely</li>
+            <li><strong>Engineering momentum</strong> — compaction, memory hooks, persistent storage (catalyzed by Claws) are functionally mitigating the problem <em>now</em></li>
+          </ul>
+          <p class="fragment" style="margin-top: 1.2em; font-size: 0.75em; color: #ffd54f;">
+            For practitioners, "true infinite context" vs<br>"functionally indistinguishable" is a distinction without a difference.
+          </p>
+        </div>
+        <div class="visual">
+          <img class="slide-img-sm" src="https://raw.githubusercontent.com/letta-ai/letta/refs/heads/main/assets/Letta-logo-RGB_GreyonTransparent_cropped_small.png" alt="Letta" style="max-width: 140px;">
+          <span class="img-caption">Memory-first agents</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Toward Online Learning</h2>
+      <h3>E2E-TTT (Dec 2025)</h3>
+      <div style="display: flex; gap: 1.5em; align-items: flex-start; margin-top: 0.5em;">
+        <div style="flex: 1;">
+          <p>End-to-End Test-Time Training — reframes language modeling as <span class="highlight">continual learning</span>.</p>
+          <ul style="margin-top: 0.8em;">
+            <li>Model compresses context into its weights at inference time</li>
+            <li>Scales like full-attention Transformers</li>
+            <li>Constant inference latency (2.7× faster at 128K)</li>
+          </ul>
+          <p style="margin-top: 1em; text-align: center; font-size: 0.7em; color: #aaa;">
+            Currently demonstrated at 3B parameters.<br>
+            Scaling to frontier is unproven — but the direction is credible and active.
+          </p>
+        </div>
+        <div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.4em; padding-top: 1em;">
+          <!-- Visual: TTT concept -->
+          <div style="background: rgba(100,181,246,0.06); border: 1px solid #334; border-radius: 10px; padding: 0.8em; font-size: 0.48em; color: #90caf9; text-align: center; width: 170px;">
+            <div style="border: 1px dashed #555; border-radius: 6px; padding: 0.4em; color: #888;">
+              📖 Context tokens
+            </div>
+            <div style="color: #ffd54f; margin: 0.3em 0;">↓ compresses into ↓</div>
+            <div style="border: 1px solid #64b5f6; border-radius: 6px; padding: 0.4em; color: #64b5f6;">
+              🧠 Model weights
+            </div>
+            <div style="color: #555; margin-top: 0.3em; font-size: 0.9em;">Learns at inference time</div>
+          </div>
+          <span style="font-size: 0.4em; color: #666;">Continual learning loop</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>AI Will Structure<br>the Unstructured</h2>
+      <div class="img-right" style="margin-top: 0.5em;">
+        <div class="content">
+          <p>Why AI agents work well for code:<br>
+          code is <span class="highlight">structured and verifiable</span> — tests, compilers, type checkers.</p>
+          <p class="fragment" style="margin-top: 1em;">AI will use its own SWE capabilities to <strong>close this gap</strong> —<br>
+          structuring non-coding work, making it API-addressable, testable.</p>
+          <p class="fragment" style="margin-top: 1em; color: #90caf9;">
+            Digital transformation on steroids.<br>
+            <span style="font-size: 0.85em; color: #aaa;">A trend that's been running for decades — massively accelerated.</span>
+          </p>
+          <p class="fragment" style="margin-top: 1em; font-size: 0.7em; color: #aaa;">
+            Edge cases? Escalate — including spawning human contractors when needed.
+          </p>
+        </div>
+        <div class="visual">
+          <!-- Visual: transformation flow -->
+          <div style="background: rgba(100,181,246,0.06); border: 1px solid #334; border-radius: 10px; padding: 1em 0.8em; font-size: 0.42em; color: #90caf9; text-align: center; width: 160px;">
+            <div style="border: 1px dashed #555; border-radius: 6px; padding: 0.5em; margin-bottom: 0.4em; color: #888;">
+              📄 Emails<br>📋 Docs<br>📊 Spreadsheets
+            </div>
+            <div style="color: #ffd54f; margin: 0.3em 0;">↓ AI structures ↓</div>
+            <div style="border: 1px solid #64b5f6; border-radius: 6px; padding: 0.5em; color: #64b5f6;">
+              ⚙️ APIs<br>🔗 Agent-to-Agent<br>✅ Testable
+            </div>
+          </div>
+          <span class="img-caption">Fuzzy → structured</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>AI Workers, Not AI Assistants</h2>
+      <div style="display: flex; gap: 2em; align-items: flex-start; margin-top: 0.5em;">
+        <div style="flex: 1;">
+          <p class="fragment" style="color: #ef9a9a; font-size: 0.7em;">The Claws security problem may be unsolvable — persistent access to <em>your</em> credentials is inherently exposed.</p>
+          <p class="fragment" style="color: #ffd54f; font-size: 0.7em; margin-top: 0.8em;">The alternative:</p>
+          <p class="fragment" style="font-size: 0.7em;">Spawn <strong>long-lived AI workers with their own accounts</strong>. Own email, calendar, project tools. Share items as with a colleague. Assign work. Review output. Grant scoped access.</p>
+          <p class="fragment" style="font-size: 0.6em; color: #aaa; margin-top: 0.8em;">
+            Devin-on-steroids — not just for coding but for all knowledge work.<br>
+            Accounts tagged as AI, linked to human principal, clear escalation paths.<br>
+            <span style="color: #90caf9;">The organizational plumbing is simple. The cultural shift is the bigger part.</span>
+          </p>
+        </div>
+        <!-- Visual: AI worker model -->
+        <div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.4em; padding-top: 0.5em;">
+          <div style="background: rgba(100,181,246,0.06); border: 1px solid #334; border-radius: 10px; padding: 0.8em; font-size: 0.5em; color: #90caf9; text-align: center; width: 180px;">
+            <div style="font-weight: bold; color: #ffd54f; margin-bottom: 0.4em;">👤 You</div>
+            <div style="color: #555; margin-bottom: 0.3em;">assign & share ↓</div>
+            <div style="border: 1px solid #64b5f6; border-radius: 6px; padding: 0.5em;">
+              <div style="color: #64b5f6;">🤖 AI Worker</div>
+              <div style="color: #888; font-size: 0.9em; margin-top: 0.2em;">📧 Own email · 📅 Own calendar<br>🔑 Scoped access</div>
+            </div>
+            <div style="color: #555; margin-top: 0.3em;">↑ reports & escalates</div>
+          </div>
+          <span style="font-size: 0.4em; color: #666;">Own identity, bounded permissions</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Timeline</h2>
+      <div style="text-align: center; margin-top: 1em;">
+        <p style="font-size: 0.75em; color: #aaa;">METR time horizon doubling every ~123 days</p>
+      </div>
+      <div class="img-right" style="margin-top: 0.5em;">
+        <div class="content">
+          <table>
+            <tr><th>When</th><th>Time Horizon</th><th>What It Enables</th></tr>
+            <tr><td>Early 2024</td><td>~4 minutes</td><td>Simple autocomplete</td></tr>
+            <tr><td>Feb 2026</td><td>~14.5 hours</td><td>Full workday tasks</td></tr>
+            <tr><td>Late 2026</td><td>~1 week</td><td>Sprint-level projects</td></tr>
+            <tr><td>2027</td><td>~1 month+</td><td>AI team members</td></tr>
+          </table>
+          <p class="fragment" style="margin-top: 1em; font-size: 0.65em; color: #888;">
+            Extrapolation, not guarantee — but the trend has held for two years.
+          </p>
+        </div>
+        <div class="visual">
+          <img class="slide-img" src="https://metr.org/assets/images/measuring-ai-ability-to-complete-long-tasks/linear-exponential-hyperbolic-fits.png" alt="METR exponential trend" style="max-width: 220px;">
+          <span class="img-caption">METR exponential fit</span>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ============ 5. IMPLICATIONS ============ -->
+  <section>
+    <section>
+      <h2>Implications for Discussion</h2>
+      <p class="subtitle">Not recommendations — provocations</p>
+    </section>
+
+    <section>
+      <h2>The Landscape Shift</h2>
+      <table style="margin-top: 1em;">
+        <tr><th>Era</th><th>Interaction</th><th>Core Skill</th></tr>
+        <tr><td>Chat (2023)</td><td>Prompt → Response</td><td>Prompt engineering</td></tr>
+        <tr><td>Agents (2024–25)</td><td>Delegate → Review</td><td>Task decomposition, context engineering</td></tr>
+        <tr><td>Orchestration (2026+)</td><td>Configure → Oversee</td><td>Systems thinking, trust calibration</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Questions for the Workshop</h2>
+      <ul>
+        <li class="fragment fade-in-then-semi-out"><strong>From prompting to orchestrating</strong> — MCP, skills, agent coordination, context engineering. How does course structure reflect this?</li>
+        <li class="fragment fade-in-then-semi-out"><strong>Non-coders need this now</strong> — Cowork and Claws make agent patterns a general professional skill</li>
+        <li class="fragment fade-in-then-semi-out"><strong>AI will structure the unstructured</strong> — what does that mean for the professional roles we're training people for?</li>
+        <li class="fragment fade-in-then-semi-out"><strong>The "AI team member" model</strong> — professional competence shifts toward management and oversight</li>
+        <li class="fragment"><strong>Curriculum agility</strong> — six months ago, "Claws" didn't exist. How do we teach in a landscape that moves this fast?</li>
+      </ul>
+    </section>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section>
+    <h2>Thank You</h2>
+    <p style="margin-top: 1.5em; font-size: 0.7em; color: #aaa;">
+      Sources & full briefing document available on request.
+    </p>
+  </section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'fade',
+    transitionSpeed: 'default',
+    controlsTutorial: false,
+    progress: true,
+    center: true,
+    width: 1280,
+    height: 720,
+  });
+
+  // Click anywhere to advance (like pressing Space)
+  document.querySelector('.reveal').addEventListener('click', function(e) {
+    // Skip if clicking on a link, button, or the navigation controls
+    if (e.target.closest('a, button, .controls, .slide-number')) return;
+    Reveal.next();
+  });
+</script>
+</body>
+</html>
