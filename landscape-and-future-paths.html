@@ -36,7 +36,6 @@
     .reveal .two-col > div { flex: 1; }
     .reveal .emoji { font-size: 1.5em; }
     .reveal .source { color: #666; font-size: 0.45em; position: absolute; bottom: 1em; left: 50%; transform: translateX(-50%); }
-    .reveal .fragment.fade-in-then-semi-out.visible:not(.current-fragment) { opacity: 0.4; }
     .slide-number { color: #555 !important; }
 
     /* Persistent UCD PA logo */
@@ -153,37 +152,21 @@
   <section>
     <h2>Only Two Fundamental Limitations</h2>
     <div style="margin-top: 1em;">
-      <div class="fragment fade-in-then-semi-out">
+      <div>
         <h3>1. Long-term Context Management</h3>
         <p>Finite context windows. No true memory across sessions.<br>
         Hit the boundary → discontinuity, loss of thread.</p>
       </div>
-      <div class="fragment fade-in-then-semi-out" style="margin-top: 1em;">
+      <div style="margin-top: 1em;">
         <h3>2. Online Learning</h3>
         <p>No weight updates at inference time. Can't learn new concepts,<br>
         skills, or preferences in a lasting way. Every session is a blank slate.</p>
       </div>
-      <p class="fragment" style="margin-top: 1em; font-size: 0.65em; color: #aaa; text-align: center;">
+      <p style="margin-top: 1em; font-size: 0.65em; color: #aaa; text-align: center;">
         Both are active research areas. Engineering is already mitigating context limitations.<br>
         <span style="color: #ffd54f;">Everything else is tractable engineering — moving at extraordinary speed.</span>
       </p>
     </div>
-  </section>
-
-  <section>
-    <h2>Everything Else Is<br>Tractable Engineering</h2>
-    <p style="margin-top: 0.5em; font-size: 0.7em; color: #aaa; text-align: center;">
-      Not easy — but no research breakthroughs needed.
-    </p>
-    <table style="margin-top: 1em;">
-      <tr><th>Challenge</th><th>Engineering Solution</th></tr>
-      <tr class="fragment"><td>Tool access</td><td>MCP (Model Context Protocol)</td></tr>
-      <tr class="fragment"><td>Knowledge & workflows</td><td>Skills</td></tr>
-      <tr class="fragment"><td>Working memory</td><td>Compaction & memory hooks</td></tr>
-      <tr class="fragment"><td>Safety</td><td>Permission systems & hooks</td></tr>
-      <tr class="fragment"><td>Parallelism</td><td>Agent teams</td></tr>
-      <tr class="fragment"><td>Persistence</td><td>Claws</td></tr>
-    </table>
   </section>
 
   <!-- ============ 2. MCP & SKILLS ============ -->
@@ -208,7 +191,7 @@
         </ul>
       </div>
     </div>
-    <p class="fragment" style="margin-top: 1.2em; text-align: center; font-size: 0.7em; color: #aaa;">
+    <p style="margin-top: 1.2em; text-align: center; font-size: 0.7em; color: #aaa;">
       Plus: parallel agent teams (Anthropic built a C compiler this way),<br>
       context compaction, permission hooks — all progressing rapidly.
     </p>
@@ -227,7 +210,7 @@
           <li>External systems via MCP & skills</li>
           <li>Pro, Team, and Enterprise plans</li>
         </ul>
-        <p class="fragment" style="margin-top: 1em; color: #90caf9; font-size: 0.8em;">
+        <p style="margin-top: 1em; color: #90caf9; font-size: 0.8em;">
           Interaction model: <strong>coworker</strong>, not chatbot.
         </p>
       </div>
@@ -255,7 +238,7 @@
       Deployed at Goldman Sachs, Santander, Nubank<br>
       Excels at clear-requirement tasks (4–8h junior engineer work)
     </p>
-    <p class="fragment" style="margin-top: 0.8em; text-align: center; font-size: 0.75em; color: #90caf9;">
+    <p style="margin-top: 0.8em; text-align: center; font-size: 0.75em; color: #90caf9;">
       Not a tool you orchestrate — an agent you <em>assign work to</em>.
     </p>
   </section>
@@ -269,7 +252,7 @@
           <p style="margin: 0;">LLMs → LLM Agents → <strong>Claws</strong></p>
           <p style="margin: 0.3em 0 0 0;">"Claws are now a new layer on top of LLM agents, taking the orchestration, scheduling, context, tool calls and a kind of persistence to a next level."</p>
         </blockquote>
-        <div class="two-col fragment" style="margin-top: 0.6em; font-size: 0.85em;">
+        <div class="two-col" style="margin-top: 0.6em; font-size: 0.85em;">
           <div>
             <h3 style="margin-bottom: 0.2em;">OpenClaw</h3>
             <p style="font-size: 0.7em; line-height: 1.4;">~400K lines · WhatsApp, Telegram, Slack, Signal, iMessage…<br>
@@ -296,13 +279,13 @@
         <div class="content">
           <p>Why AI agents work well for code:<br>
           code is <span class="highlight">structured and verifiable</span> — tests, compilers, type checkers.</p>
-          <p class="fragment" style="margin-top: 1em;">AI will use its own SWE capabilities to <strong>close this gap</strong> —<br>
+          <p style="margin-top: 1em;">AI will use its own SWE capabilities to <strong>close this gap</strong> —<br>
           structuring non-coding work, making it API-addressable, testable.</p>
-          <p class="fragment" style="margin-top: 1em; color: #90caf9;">
+          <p style="margin-top: 1em; color: #90caf9;">
             Digital transformation on steroids.<br>
             <span style="font-size: 0.85em; color: #aaa;">A trend that's been running for decades — massively accelerated.</span>
           </p>
-          <p class="fragment" style="margin-top: 1em; font-size: 0.7em; color: #aaa;">
+          <p style="margin-top: 1em; font-size: 0.7em; color: #aaa;">
             Edge cases? Escalate — including spawning human contractors when needed.
           </p>
         </div>
@@ -326,13 +309,14 @@
       <h2>AI Workers, Not AI Assistants</h2>
       <div style="display: flex; gap: 2em; align-items: flex-start; margin-top: 0.5em;">
         <div style="flex: 1;">
-          <p class="fragment" style="color: #ef9a9a; font-size: 0.7em;">The Claws security problem may be unsolvable — persistent access to <em>your</em> credentials is inherently exposed.</p>
-          <p class="fragment" style="color: #ffd54f; font-size: 0.7em; margin-top: 0.8em;">The alternative:</p>
-          <p class="fragment" style="font-size: 0.7em;">Spawn <strong>long-lived AI workers with their own accounts</strong>. Own email, calendar, project tools. Share items as with a colleague. Assign work. Review output. Grant scoped access.</p>
-          <p class="fragment" style="font-size: 0.6em; color: #aaa; margin-top: 0.8em;">
-            Devin-on-steroids — not just for coding but for all knowledge work.<br>
+          <p style="font-size: 0.7em;">The natural evolution: <strong>long-lived AI workers with their own accounts</strong>. Own email, calendar, project tools. Share items as with a colleague. Assign work. Review output. Grant scoped access.</p>
+          <p style="font-size: 0.7em; margin-top: 0.8em; color: #90caf9;">
+            <strong>OpenAI Frontier</strong> (Feb 2026) is already building this —<br>
+            enterprise platform to deploy AI agents as workers with onboarding, shared context, and permissions. Uber, Intuit, State Farm among first customers.
+          </p>
+          <p style="font-size: 0.6em; color: #aaa; margin-top: 0.8em;">
             Accounts tagged as AI, linked to human principal, clear escalation paths.<br>
-            <span style="color: #90caf9;">The organizational plumbing is simple. The cultural shift is the bigger part.</span>
+            <span style="color: #ffd54f;">The organizational plumbing is simple. The cultural shift is the bigger part.</span>
           </p>
         </div>
         <!-- Visual: AI worker model -->
@@ -351,31 +335,6 @@
       </div>
     </section>
 
-  <section>
-    <h2>The Timeline</h2>
-    <div style="text-align: center; margin-top: 1em;">
-      <p style="font-size: 0.75em; color: #aaa;">METR time horizon doubling every ~123 days</p>
-    </div>
-    <div class="img-right" style="margin-top: 0.5em;">
-      <div class="content">
-        <table>
-          <tr><th>When</th><th>Time Horizon</th><th>What It Enables</th></tr>
-          <tr><td>Early 2024</td><td>~4 minutes</td><td>Simple autocomplete</td></tr>
-          <tr><td>Feb 2026</td><td>~14.5 hours</td><td>Full workday tasks</td></tr>
-          <tr><td>Late 2026</td><td>~1 week</td><td>Sprint-level projects</td></tr>
-          <tr><td>2027</td><td>~1 month+</td><td>AI team members</td></tr>
-        </table>
-        <p class="fragment" style="margin-top: 1em; font-size: 0.65em; color: #888;">
-          Extrapolation, not guarantee — but the trend has held for two years.
-        </p>
-      </div>
-      <div class="visual">
-        <img class="slide-img" src="https://metr.org/assets/images/measuring-ai-ability-to-complete-long-tasks/linear-exponential-hyperbolic-fits.png" alt="METR exponential trend" style="max-width: 220px;">
-        <span class="img-caption">METR exponential fit</span>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ 5. IMPLICATIONS ============ -->
   <section>
     <h2>The Landscape Shift</h2>
@@ -385,7 +344,7 @@
       <tr><td>Agents (2024–25)</td><td>Delegate → Review</td><td>Task decomposition, context engineering</td></tr>
       <tr><td>Orchestration (2026+)</td><td>Configure → Oversee</td><td>Systems thinking, trust calibration</td></tr>
     </table>
-    <p class="fragment dim" style="margin-top: 1em; text-align: center;">
+    <p class="dim" style="margin-top: 1em; text-align: center;">
       Yegge's framing: 2024 = Chatbot · 2025 = Agent · 2026 = <strong>Orchestration</strong>
     </p>
   </section>
@@ -393,11 +352,11 @@
   <section>
     <h2>Questions for the Workshop</h2>
     <ul>
-      <li class="fragment fade-in-then-semi-out"><strong>From prompting to orchestrating</strong> — MCP, skills, agent coordination, context engineering. How does course structure reflect this?</li>
-      <li class="fragment fade-in-then-semi-out"><strong>Non-coders need this now</strong> — Cowork and Claws make agent patterns a general professional skill</li>
-      <li class="fragment fade-in-then-semi-out"><strong>AI will structure the unstructured</strong> — what does that mean for the professional roles we're training people for?</li>
-      <li class="fragment fade-in-then-semi-out"><strong>The "AI team member" model</strong> — professional competence shifts toward management and oversight</li>
-      <li class="fragment"><strong>Curriculum agility</strong> — six months ago, "Claws" didn't exist. How do we teach in a landscape that moves this fast?</li>
+      <li><strong>From prompting to orchestrating</strong> — MCP, skills, agent coordination, context engineering. How does course structure reflect this?</li>
+      <li><strong>Non-coders need this now</strong> — Cowork and Claws make agent patterns a general professional skill</li>
+      <li><strong>AI will structure the unstructured</strong> — what does that mean for the professional roles we're training people for?</li>
+      <li><strong>The "AI team member" model</strong> — professional competence shifts toward management and oversight</li>
+      <li><strong>Curriculum agility</strong> — six months ago, "Claws" didn't exist. How do we teach in a landscape that moves this fast?</li>
     </ul>
   </section>
 
