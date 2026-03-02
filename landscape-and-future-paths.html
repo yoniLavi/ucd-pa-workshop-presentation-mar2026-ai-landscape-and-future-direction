@@ -35,10 +35,8 @@
     .reveal .two-col { display: flex; gap: 2em; align-items: flex-start; }
     .reveal .two-col > div { flex: 1; }
     .reveal .emoji { font-size: 1.5em; }
-    .reveal .source { color: #666; font-size: 0.45em; position: absolute; bottom: 1em; left: 50%; transform: translateX(-50%); }
     .slide-number { color: #555 !important; }
 
-    /* Persistent UCD PA logo */
     .ucd-logo {
       position: fixed;
       top: 18px;
@@ -50,15 +48,6 @@
       filter: brightness(1.8) contrast(0.9);
     }
 
-    /* Slide image styling */
-    .slide-img {
-      max-height: 160px;
-      max-width: 220px;
-      border-radius: 8px;
-      opacity: 0.9;
-      object-fit: contain;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
-    }
     .slide-img-sm {
       max-height: 100px;
       max-width: 160px;
@@ -87,50 +76,25 @@
       text-align: center;
       max-width: 200px;
     }
-
-    /* Logo cluster for ecosystem slides */
-    .logo-cluster {
-      display: flex;
-      gap: 1.5em;
-      align-items: center;
-      justify-content: center;
-      margin: 1em 0;
-      flex-wrap: wrap;
-    }
-    .logo-cluster img {
-      height: 50px;
-      opacity: 0.8;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
-    }
-    .logo-cluster .logo-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.3em;
-    }
-    .logo-cluster .logo-label {
-      font-size: 0.45em;
-      color: #888;
-    }
   </style>
 </head>
 <body>
 
-<!-- Persistent UCD Professional Academy logo (local copy) -->
 <img class="ucd-logo" src="ucd-pa-logo.svg" alt="UCD Professional Academy">
 
 <div class="reveal">
 <div class="slides">
 
-  <!-- ============ TITLE ============ -->
   <section>
     <h1>Current Landscape<br>& Future Paths</h1>
     <p class="subtitle">AI Beyond the Chat Window</p>
     <p style="margin-top: 1.5em; font-size: 0.6em; color: #ccc;">Yoni Lavi</p>
     <p class="dim" style="margin-top: 1em;">Planning Workshop — SME Perspective<br>March 2026</p>
+    <aside class="notes">
+      Opening framing: there are only two fundamental limitations left — everything else is tractable engineering progressing at breakneck speed. That's the thesis.
+    </aside>
   </section>
 
-  <!-- ============ 1. HOW CAPABLE / LIMITATIONS ============ -->
   <section>
     <h2>How capable are the models?</h2>
     <div class="two-col" style="margin-top: 1em;">
@@ -147,6 +111,9 @@
       METR time horizon doubling every <span class="highlight">~123 days</span><br>
       (4 min in early 2024 → 14.5 hours in Feb 2026)
     </p>
+    <aside class="notes">
+      ARC-AGI2 is the benchmark designed to resist brute-force AI approaches — Gemini 3 Deep Think now hits average human performance. METR measures how long a task AI can reliably complete — doubling roughly every 4 months. At this rate, week-long autonomous tasks are plausible by late 2026. Reasoning and reliability are improving rapidly and predictably — they're not the bottleneck.
+    </aside>
   </section>
 
   <section>
@@ -167,9 +134,11 @@
         <span style="color: #ffd54f;">Everything else is tractable engineering — moving at extraordinary speed.</span>
       </p>
     </div>
+    <aside class="notes">
+      These two may ultimately be solved by the same breakthrough. Engineering workarounds (compaction, memory files, RAG) are already shrinking the context discontinuity fast. Everything else — tool access, safety, parallelism, persistence — is tractable engineering that doesn't require fundamental research. The following slides show what that engineering looks like.
+    </aside>
   </section>
 
-  <!-- ============ 2. MCP & SKILLS ============ -->
   <section>
     <h2>MCP & Skills</h2>
     <p class="subtitle">The foundations of agentic AI</p>
@@ -195,9 +164,11 @@
       Plus: parallel agent teams (Anthropic built a C compiler this way),<br>
       context compaction, permission hooks — all progressing rapidly.
     </p>
+    <aside class="notes">
+      MCP is the open standard that lets AI connect to any tool or data source — now adopted everywhere. Skills are the complementary standard: they encode what to do (workflows, playbooks), while MCP encodes how to connect. Both are central to the Claws architecture we'll see shortly. The C compiler example: Anthropic ran 5 parallel Claude agents coordinating on a shared codebase, specializing and claiming tasks autonomously. This is delegation and orchestration, not autocomplete.
+    </aside>
   </section>
 
-  <!-- ============ 3. THE EXPANDING ECOSYSTEM ============ -->
   <section>
     <h2>Claude Cowork</h2>
     <p class="dim">Research preview — January 2026</p>
@@ -219,6 +190,9 @@
         <span class="img-caption">Built on Claude Code's foundations</span>
       </div>
     </div>
+    <aside class="notes">
+      Key insight: the same patterns that transformed coding apply to all knowledge work. Cowork is Claude Code for non-developers — you assign work and review results, not chat back and forth. Available on Pro, Team, and Enterprise plans. This is where the agent pattern starts reaching business professionals, not just engineers.
+    </aside>
   </section>
 
   <section>
@@ -241,6 +215,9 @@
     <p style="margin-top: 0.8em; text-align: center; font-size: 0.75em; color: #90caf9;">
       Not a tool you orchestrate — an agent you <em>assign work to</em>.
     </p>
+    <aside class="notes">
+      Devin represents a different paradigm — not a tool you orchestrate but an autonomous agent you assign work to. 67% of PRs merged is up from 34% a year ago — real improvement, real production use. Deployed at major financial institutions. Excels at clear-requirement tasks a junior engineer would take 4-8 hours on. This is the "AI employee" model in practice today.
+    </aside>
   </section>
 
   <section>
@@ -270,72 +247,77 @@
         <span class="img-caption">Formerly Clawdbot</span>
       </div>
     </div>
+    <aside class="notes">
+      Karpathy's layering model: LLMs → LLM Agents → Claws. A Claw is a locally-hosted AI assistant wired to your tools — calendar, email, browser, messaging. Not a chat window but a persistent orchestrator. OpenClaw is the full-featured version (~400K lines, broad integrations, moving to open-source foundation). NanoClaw is Karpathy's minimalist alternative — ~4K lines, designed to be fully understandable by both humans and AI agents. The 🦞 emoji is the symbol. This is where MCP and Skills become critical infrastructure.
+    </aside>
   </section>
 
-  <!-- ============ 4. WHERE THIS IS GOING ============ -->
   <section>
     <h2>AI Will Structure<br>the Unstructured</h2>
-      <div class="img-right" style="margin-top: 0.5em;">
-        <div class="content">
-          <p>Why AI agents work well for code:<br>
-          code is <span class="highlight">structured and verifiable</span> — tests, compilers, type checkers.</p>
-          <p style="margin-top: 1em;">AI will use its own SWE capabilities to <strong>close this gap</strong> —<br>
-          structuring non-coding work, making it API-addressable, testable.</p>
-          <p style="margin-top: 1em; color: #90caf9;">
-            Digital transformation on steroids.<br>
-            <span style="font-size: 0.85em; color: #aaa;">A trend that's been running for decades — massively accelerated.</span>
-          </p>
-          <p style="margin-top: 1em; font-size: 0.7em; color: #aaa;">
-            Edge cases? Escalate — including spawning human contractors when needed.
-          </p>
-        </div>
-        <div class="visual">
-          <!-- Visual: transformation flow -->
-          <div style="background: rgba(100,181,246,0.06); border: 1px solid #334; border-radius: 10px; padding: 1em 0.8em; font-size: 0.42em; color: #90caf9; text-align: center; width: 160px;">
-            <div style="border: 1px dashed #555; border-radius: 6px; padding: 0.5em; margin-bottom: 0.4em; color: #888;">
-              📄 Emails<br>📋 Docs<br>📊 Spreadsheets
-            </div>
-            <div style="color: #ffd54f; margin: 0.3em 0;">↓ AI structures ↓</div>
-            <div style="border: 1px solid #64b5f6; border-radius: 6px; padding: 0.5em; color: #64b5f6;">
-              ⚙️ APIs<br>🔗 Agent-to-Agent<br>✅ Testable
-            </div>
-          </div>
-          <span class="img-caption">Fuzzy → structured</span>
-        </div>
+    <div class="img-right" style="margin-top: 0.5em;">
+      <div class="content">
+        <p>Why AI agents work well for code:<br>
+        code is <span class="highlight">structured and verifiable</span> — tests, compilers, type checkers.</p>
+        <p style="margin-top: 1em;">AI will use its own SWE capabilities to <strong>close this gap</strong> —<br>
+        structuring non-coding work, making it API-addressable, testable.</p>
+        <p style="margin-top: 1em; color: #90caf9;">
+          Digital transformation on steroids.<br>
+          <span style="font-size: 0.85em; color: #aaa;">A trend that's been running for decades — massively accelerated.</span>
+        </p>
+        <p style="margin-top: 1em; font-size: 0.7em; color: #aaa;">
+          Edge cases? Escalate — including spawning human contractors when needed.
+        </p>
       </div>
-    </section>
-
-    <section>
-      <h2>AI Workers, Not AI Assistants</h2>
-      <div style="display: flex; gap: 2em; align-items: flex-start; margin-top: 0.5em;">
-        <div style="flex: 1;">
-          <p style="font-size: 0.7em;">The natural evolution: <strong>long-lived AI workers with their own accounts</strong>. Own email, calendar, project tools. Share items as with a colleague. Assign work. Review output. Grant scoped access.</p>
-          <p style="font-size: 0.7em; margin-top: 0.8em; color: #90caf9;">
-            <strong>OpenAI Frontier</strong> (Feb 2026) is already building this —<br>
-            enterprise platform to deploy AI agents as workers with onboarding, shared context, and permissions. Uber, Intuit, State Farm among first customers.
-          </p>
-          <p style="font-size: 0.6em; color: #aaa; margin-top: 0.8em;">
-            Accounts tagged as AI, linked to human principal, clear escalation paths.<br>
-            <span style="color: #ffd54f;">The organizational plumbing is simple. The cultural shift is the bigger part.</span>
-          </p>
-        </div>
-        <!-- Visual: AI worker model -->
-        <div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.4em; padding-top: 0.5em;">
-          <div style="background: rgba(100,181,246,0.06); border: 1px solid #334; border-radius: 10px; padding: 0.8em; font-size: 0.5em; color: #90caf9; text-align: center; width: 180px;">
-            <div style="font-weight: bold; color: #ffd54f; margin-bottom: 0.4em;">👤 You</div>
-            <div style="color: #555; margin-bottom: 0.3em;">assign & share ↓</div>
-            <div style="border: 1px solid #64b5f6; border-radius: 6px; padding: 0.5em;">
-              <div style="color: #64b5f6;">🤖 AI Worker</div>
-              <div style="color: #888; font-size: 0.9em; margin-top: 0.2em;">📧 Own email · 📅 Own calendar<br>🔑 Scoped access</div>
-            </div>
-            <div style="color: #555; margin-top: 0.3em;">↑ reports & escalates</div>
+      <div class="visual">
+        <div style="background: rgba(100,181,246,0.06); border: 1px solid #334; border-radius: 10px; padding: 1em 0.8em; font-size: 0.42em; color: #90caf9; text-align: center; width: 160px;">
+          <div style="border: 1px dashed #555; border-radius: 6px; padding: 0.5em; margin-bottom: 0.4em; color: #888;">
+            📄 Emails<br>📋 Docs<br>📊 Spreadsheets
           </div>
-          <span style="font-size: 0.4em; color: #666;">Own identity, bounded permissions</span>
+          <div style="color: #ffd54f; margin: 0.3em 0;">↓ AI structures ↓</div>
+          <div style="border: 1px solid #64b5f6; border-radius: 6px; padding: 0.5em; color: #64b5f6;">
+            ⚙️ APIs<br>🔗 Agent-to-Agent<br>✅ Testable
+          </div>
         </div>
+        <span class="img-caption">Fuzzy → structured</span>
       </div>
-    </section>
+    </div>
+    <aside class="notes">
+      This is a key observation: AI agents work well for code because code is structured and verifiable. Non-coding knowledge work — emails, documents, planning — lacks this. But AI itself will close this gap. Using its own software engineering capabilities, AI will accelerate digital transformation — structuring previously unstructured work, making it API-addressable and testable. This is putting on steroids a trend that's been running for decades. The question of whether AI handles "fuzzy" work well becomes less relevant as less work remains fuzzy. For genuine edge cases, AI systems can escalate — including spawning human contractors via platforms like Upwork.
+    </aside>
+  </section>
 
-  <!-- ============ 5. IMPLICATIONS ============ -->
+  <section>
+    <h2>AI Workers, Not AI Assistants</h2>
+    <div style="display: flex; gap: 2em; align-items: flex-start; margin-top: 0.5em;">
+      <div style="flex: 1;">
+        <p style="font-size: 0.7em;">The natural evolution: <strong>long-lived AI workers with their own accounts</strong>. Own email, calendar, project tools. Share items as with a colleague. Assign work. Review output. Grant scoped access.</p>
+        <p style="font-size: 0.7em; margin-top: 0.8em; color: #90caf9;">
+          <strong>OpenAI Frontier</strong> (Feb 2026) is already building this —<br>
+          enterprise platform to deploy AI agents as workers with onboarding, shared context, and permissions. Uber, Intuit, State Farm among first customers.
+        </p>
+        <p style="font-size: 0.6em; color: #aaa; margin-top: 0.8em;">
+          Accounts tagged as AI, linked to human principal, clear escalation paths.<br>
+          <span style="color: #ffd54f;">The organizational plumbing is simple. The cultural shift is the bigger part.</span>
+        </p>
+      </div>
+      <div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.4em; padding-top: 0.5em;">
+        <div style="background: rgba(100,181,246,0.06); border: 1px solid #334; border-radius: 10px; padding: 0.8em; font-size: 0.5em; color: #90caf9; text-align: center; width: 180px;">
+          <div style="font-weight: bold; color: #ffd54f; margin-bottom: 0.4em;">👤 You</div>
+          <div style="color: #555; margin-bottom: 0.3em;">assign & share ↓</div>
+          <div style="border: 1px solid #64b5f6; border-radius: 6px; padding: 0.5em;">
+            <div style="color: #64b5f6;">🤖 AI Worker</div>
+            <div style="color: #888; font-size: 0.9em; margin-top: 0.2em;">📧 Own email · 📅 Own calendar<br>🔑 Scoped access</div>
+          </div>
+          <div style="color: #555; margin-top: 0.3em;">↑ reports & escalates</div>
+        </div>
+        <span style="font-size: 0.4em; color: #666;">Own identity, bounded permissions</span>
+      </div>
+    </div>
+    <aside class="notes">
+      The Claws approach raises a security question — giving AI persistent access to your personal credentials is inherently exposed. A more natural evolution: long-lived AI workers with their own accounts, their own email, calendar, project tools. You share specific items as you would with a human colleague. OpenAI Frontier, launched Feb 2026, is already building exactly this — an enterprise platform to deploy AI agents as workers with onboarding, shared business context, and permissions. Uber, Intuit, State Farm among the first customers. BCG, McKinsey, Accenture, Capgemini are Frontier Alliance partners deploying it. The METR trajectory grounds this: doubling every ~123 days means week-long autonomous tasks are plausible by late 2026. The accountability model is straightforward: AI accounts tagged as such, linked to human principals, clear escalation paths. We're already seeing this in customer service. The organizational plumbing is simple; the cultural adjustment is the bigger shift.
+    </aside>
+  </section>
+
   <section>
     <h2>The Landscape Shift</h2>
     <table style="margin-top: 1em;">
@@ -347,6 +329,9 @@
     <p class="dim" style="margin-top: 1em; text-align: center;">
       Yegge's framing: 2024 = Chatbot · 2025 = Agent · 2026 = <strong>Orchestration</strong>
     </p>
+    <aside class="notes">
+      The skillset is shifting. Prompt engineering was 2023's core skill. Now it's about understanding tool ecosystems (MCP, Skills), agent coordination, and context engineering. By 2026+, it's systems thinking and trust calibration — knowing when and how much to delegate. Steve Yegge's framing captures it well: 2024 was the year of the Chatbot, 2025 the year of the Agent, 2026 is the year of Orchestration. His Gas Town project runs 20-30 parallel Claude Code instances organized into hierarchical colonies.
+    </aside>
   </section>
 
   <section>
@@ -358,20 +343,23 @@
       <li><strong>The "AI team member" model</strong> — professional competence shifts toward management and oversight</li>
       <li><strong>Curriculum agility</strong> — six months ago, "Claws" didn't exist. How do we teach in a landscape that moves this fast?</li>
     </ul>
+    <aside class="notes">
+      These are provocations, not recommendations. Open the floor here. The key tension: we need to teach durable skills (systems thinking, trust calibration, task decomposition) in a landscape where specific tools change every few months. Also worth noting: if AI turns non-coding work into coding work, and AI team members become the norm, what does "professional competence" even mean in 2-3 years?
+    </aside>
   </section>
 
-  <!-- ============ CLOSING ============ -->
   <section>
     <h2>Thank You</h2>
-    <p style="margin-top: 1.5em; font-size: 0.7em; color: #aaa;">
-      Sources & full briefing document available on request.
-    </p>
+    <aside class="notes">
+      Q&A time. Full briefing document and source links available on request.
+    </aside>
   </section>
 
 </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 <script>
   Reveal.initialize({
     hash: true,
@@ -383,11 +371,11 @@
     center: true,
     width: 1280,
     height: 720,
+    plugins: [RevealNotes],
   });
 
   // Click anywhere to advance (like pressing Space)
   document.querySelector('.reveal').addEventListener('click', function(e) {
-    // Skip if clicking on a link, button, or the navigation controls
     if (e.target.closest('a, button, .controls, .slide-number')) return;
     Reveal.next();
   });
