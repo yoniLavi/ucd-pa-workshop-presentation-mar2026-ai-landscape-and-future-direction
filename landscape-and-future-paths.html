@@ -107,12 +107,8 @@
         <span class="stat-label">Claude Opus 4.6 - METR time horizon<br>50% success on tasks of this length</span>
       </div>
     </div>
-    <p style="text-align: center; margin-top: 1.5em; font-size: 0.65em; color: #ccc;">
-      Doubling every <span class="highlight">~123 days</span>
-      · was 4 min in early 2024
-    </p>
     <aside class="notes">
-      ARC-AGI2 resists brute-force - Gemini 3 now hits average human. METR doubles every ~4 months: week-long tasks plausible by late 2026. Models aren't the bottleneck.
+      ARC-AGI2 is designed to resist brute-force scaling - yet Gemini 3 Deep Think now matches average human performance. METR's time horizon metric doubled from 4 minutes to 14.5 hours in under two years, doubling every ~123 days. At that rate, week-long autonomous tasks become plausible by late 2026. The models are not the bottleneck anymore.
     </aside>
   </section>
 
@@ -127,7 +123,7 @@
       Everything else is tractable engineering - and it more than compensates.
     </p>
     <aside class="notes">
-      Context: no true memory across sessions. Online learning: can't learn from experience, every session is a blank slate. Hallucinations: shrinking via grounding (RAG, tool use, citations) and better world models. Context and learning may share a single solution. The engineering layers already more than compensate.
+      Context: models have finite context windows and no true memory across sessions - engineering workarounds (compaction, memory files, RAG) help but there's still a discontinuity. Online learning: models can't update their weights from experience at inference time - every session starts from scratch. These two may ultimately share a single solution (E2E-TTT is a promising research direction). Hallucinations: being addressed via grounding (RAG, tool use, citations) and progress on world models. Everything else - tool access, workflow encoding, safety, parallelism - is tractable engineering moving at extraordinary speed.
     </aside>
   </section>
 
@@ -148,7 +144,7 @@
       </div>
     </div>
     <aside class="notes">
-      Open standards powering everything that follows. MCP connects AI to tools; Skills encode workflows. Adopted across the ecosystem. Also: parallel agent teams, context compaction, permission hooks.
+      MCP (Model Context Protocol) is an open standard connecting AI to external tools and data - now adopted across the ecosystem (ChatGPT, VS Code, Goose). MCP Apps return interactive UI inside conversations. Skills follow the open Agent Skills standard for encoding workflows and playbooks - hot-reload, public repository, cross-tool. Together these are the building blocks for everything that follows. Also worth mentioning: parallel agent teams (up to 5 sub-agents on shared codebases - Anthropic built a C compiler this way), context compaction (PreCompact hooks cut info loss by ~30%), and expanded permission hooks (14 lifecycle events, three handler types).
     </aside>
   </section>
 
@@ -171,7 +167,7 @@
       </div>
     </div>
     <aside class="notes">
-      Same patterns that transformed coding, now for all knowledge work. You assign work and review results. Agent patterns reaching beyond developers.
+      Cowork brings Claude Code's agent patterns to non-developers: scoped folder access, autonomous file management, parallel task queuing, external system connections via MCP and Skills. Available on Pro, Team, and Enterprise plans. The interaction model shifts from chatbot to coworker - you assign work and review results. This is where agent patterns start reaching beyond the developer audience.
     </aside>
   </section>
 
@@ -193,7 +189,7 @@
       <li>An agent you <em>assign work to</em> - not a tool you orchestrate</li>
     </ul>
     <aside class="notes">
-      Different paradigm: you assign work, not orchestrate a tool. Excels at clear-requirement tasks a junior engineer would take 4-8 hours on.
+      Devin represents a different paradigm from Claude Code - not a tool you orchestrate but an autonomous agent you assign work to. 18 months in: 67% of PRs merged (vs 34% a year ago), 4x faster at problem-solving. Deployed at Goldman Sachs, Santander, Nubank. Excels at clear-requirement tasks a junior engineer would take 4-8 hours on. This is the "AI employee" model in practice.
     </aside>
   </section>
 
@@ -216,7 +212,7 @@
       </div>
     </div>
     <aside class="notes">
-      Persistent orchestrator, not a chat window. Karpathy flags the security risk of AI accessing your personal accounts - which motivates the "own account" model on the next slides.
+      Karpathy's layering: LLMs, then LLM Agents, now Claws - taking orchestration, scheduling, context, and persistence to the next level. A Claw is a locally-hosted AI assistant wired to your personal tools. OpenClaw (~400K lines, moving to open-source foundation) vs NanoClaw (~4K lines, "fits in my head and that of AI agents"). Karpathy rightly flags the security risk of giving AI persistent access to your email, calendar, and credentials - which motivates the "own account" model on the next slides.
     </aside>
   </section>
 
@@ -244,7 +240,7 @@
       </div>
     </div>
     <aside class="notes">
-      Code works for AI because it's verifiable. AI will use its SWE skills to structure everything else too - APIs, tests, automation. Less and less work stays fuzzy.
+      Key insight: AI agents work so well for coding because code is structured and verifiable - tests, compilers, type checkers. Non-coding knowledge work (emails, documents, planning) lacks this. But AI itself will close this gap, using its own SWE capabilities to accelerate digital transformation already underway - structuring previously unstructured work, making it API-addressable and testable. In the medium term, most knowledge work will be handled by API and agent-to-agent communication. For genuine edge cases, AI can escalate - including spawning human contractors via platforms like Upwork.
     </aside>
   </section>
 
@@ -275,7 +271,7 @@
       </div>
     </div>
     <aside class="notes">
-      Shift from AI-as-tool to AI-as-coworker - autonomous, long-running, with its own identity. OpenAI Frontier validates this is where the industry is heading.
+      Natural evolution from the Claws security concern: instead of giving AI access to your personal accounts, give it its own accounts - own email, calendar, project management access. Share specific items as you would with a human colleague. OpenAI Frontier (Feb 2026) validates this direction - deployed at Uber, Intuit, State Farm. Accountability is straightforward: AI accounts tagged as such, linked to the human principal who controls them. The METR trajectory grounds this concretely: doubling every ~123 days means week-long autonomous tasks are plausible by late 2026.
     </aside>
   </section>
 
@@ -288,7 +284,7 @@
       <tr><td>Orchestration (2026+)</td><td>Configure → Oversee</td><td>Systems thinking, trust calibration</td></tr>
     </table>
     <aside class="notes">
-      Yegge: 2024 = Chatbot, 2025 = Agent, 2026 = Orchestration. His Gas Town (multi-agent framework) runs 20-30 parallel agents. METR trajectory: week-long autonomous tasks plausible by late 2026.
+      Framing from Steve Yegge: 2024 = Chatbot, 2025 = Agent, 2026 = Orchestration. His Gas Town framework runs 20-30 parallel Claude Code instances organized into hierarchical colonies. Work expressed as "Beads" (atomic units) in "Molecules" (workflow graphs), persisted in Git. The developer role transforms from individual coder to factory operator managing agent swarms.
     </aside>
   </section>
 
@@ -301,7 +297,7 @@
       <li>How do we teach when "Clawdbot" is 4 months old and already renamed?</li>
     </ul>
     <aside class="notes">
-      Provocations, not recommendations. Open the floor. Clawdbot launched Nov 2025, rebranded to OpenClaw by Feb 2026.
+      These are provocations for the group, not recommendations. The pace point is real: Clawdbot launched Nov 2025 and was already rebranded to OpenClaw by Feb 2026. Six months ago, "Claws" wasn't a concept and Cowork didn't exist. How do we build curriculum that stays relevant in a landscape moving this fast?
     </aside>
   </section>
 
