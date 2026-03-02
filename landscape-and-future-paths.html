@@ -100,7 +100,7 @@
     <div class="two-col" style="margin-top: 1em;">
       <div style="text-align: center;">
         <span class="stat">84.6%</span>
-        <span class="stat-label">Gemini 3 Deep Think on ARC-AGI2<br>≈ average human · $13.62 per run</span>
+        <span class="stat-label">Gemini 3 Deep Think on ARC-AGI2<br>≈ average human · $13.62/run</span>
       </div>
       <div style="text-align: center;">
         <span class="stat">14.5h</span>
@@ -108,11 +108,11 @@
       </div>
     </div>
     <p style="text-align: center; margin-top: 1.5em; font-size: 0.65em; color: #aaa;">
-      METR time horizon doubling every <span class="highlight">~123 days</span><br>
-      (4 min in early 2024 → 14.5 hours in Feb 2026)
+      Doubling every <span class="highlight">~123 days</span>
+      · 4 min in early 2024 → 14.5h in Feb 2026
     </p>
     <aside class="notes">
-      ARC-AGI2 is the benchmark designed to resist brute-force AI approaches — Gemini 3 Deep Think now hits average human performance. METR measures how long a task AI can reliably complete — doubling roughly every 4 months. At this rate, week-long autonomous tasks are plausible by late 2026. Reasoning and reliability are improving rapidly and predictably — they're not the bottleneck.
+      ARC-AGI2 is the benchmark designed to resist brute-force AI approaches — Gemini 3 Deep Think now hits average human performance. METR measures how long a task AI can reliably complete — doubling roughly every 4 months. At this rate, week-long autonomous tasks are plausible by late 2026, month-long by 2027. Reasoning and reliability are improving rapidly and predictably — they're not the bottleneck.
     </aside>
   </section>
 
@@ -121,21 +121,24 @@
     <div style="margin-top: 1em;">
       <div>
         <h3>1. Long-term Context Management</h3>
-        <p>Finite context windows. No true memory across sessions.<br>
-        Hit the boundary → discontinuity, loss of thread.</p>
+        <ul>
+          <li>Finite context windows — no true memory across sessions</li>
+          <li>Hit the boundary → discontinuity, loss of thread</li>
+        </ul>
       </div>
       <div style="margin-top: 1em;">
         <h3>2. Online Learning</h3>
-        <p>No weight updates at inference time. Can't learn new concepts,<br>
-        skills, or preferences in a lasting way. Every session is a blank slate.</p>
+        <ul>
+          <li>No weight updates at inference time</li>
+          <li>Can't learn new concepts or preferences — every session is a blank slate</li>
+        </ul>
       </div>
-      <p style="margin-top: 1em; font-size: 0.65em; color: #aaa; text-align: center;">
-        Both are active research areas. Engineering is already mitigating context limitations.<br>
-        <span style="color: #ffd54f;">Everything else is tractable engineering — moving at extraordinary speed.</span>
+      <p style="margin-top: 1em; font-size: 0.65em; color: #ffd54f; text-align: center;">
+        Everything else is tractable engineering — moving at extraordinary speed.
       </p>
     </div>
     <aside class="notes">
-      These two may ultimately be solved by the same breakthrough. Engineering workarounds (compaction, memory files, RAG) are already shrinking the context discontinuity fast. Everything else — tool access, safety, parallelism, persistence — is tractable engineering that doesn't require fundamental research. The following slides show what that engineering looks like.
+      These two may ultimately be solved by the same breakthrough. Both are active research areas. Engineering workarounds (compaction, memory files, RAG) are already shrinking the context discontinuity fast. Everything else — tool access, safety, parallelism, persistence — is tractable engineering that doesn't require fundamental research. The following slides show what that engineering looks like.
     </aside>
   </section>
 
@@ -160,12 +163,8 @@
         </ul>
       </div>
     </div>
-    <p style="margin-top: 1.2em; text-align: center; font-size: 0.7em; color: #aaa;">
-      Plus: parallel agent teams (Anthropic built a C compiler this way),<br>
-      context compaction, permission hooks — all progressing rapidly.
-    </p>
     <aside class="notes">
-      MCP is the open standard that lets AI connect to any tool or data source — now adopted everywhere. Skills are the complementary standard: they encode what to do (workflows, playbooks), while MCP encodes how to connect. Both are central to the Claws architecture we'll see shortly. The C compiler example: Anthropic ran 5 parallel Claude agents coordinating on a shared codebase, specializing and claiming tasks autonomously. This is delegation and orchestration, not autocomplete.
+      MCP is the open standard that lets AI connect to any tool or data source — now adopted everywhere. Skills are the complementary standard: they encode what to do (workflows, playbooks), while MCP encodes how to connect. Both are central to the Claws architecture we'll see shortly. Also progressing rapidly: parallel agent teams (Anthropic ran 5 parallel Claude agents to build a C compiler, coordinating on a shared codebase), context compaction, and permission hooks. This is delegation and orchestration, not autocomplete.
     </aside>
   </section>
 
@@ -174,15 +173,15 @@
     <p class="dim">Research preview — January 2026</p>
     <div class="img-right" style="margin-top: 0.8em;">
       <div class="content">
-        <p>Same foundations as Claude Code, designed for <span class="highlight">non-developers</span>.</p>
-        <ul style="margin-top: 0.8em;">
+        <ul>
+          <li>Claude Code's foundations, designed for <span class="highlight">non-developers</span></li>
           <li>Scoped folder access — reads, edits, creates files</li>
           <li>Parallel task queuing</li>
           <li>External systems via MCP & skills</li>
           <li>Pro, Team, and Enterprise plans</li>
         </ul>
         <p style="margin-top: 1em; color: #90caf9; font-size: 0.8em;">
-          Interaction model: <strong>coworker</strong>, not chatbot.
+          <strong>Coworker</strong>, not chatbot.
         </p>
       </div>
       <div class="visual">
@@ -191,7 +190,7 @@
       </div>
     </div>
     <aside class="notes">
-      Key insight: the same patterns that transformed coding apply to all knowledge work. Cowork is Claude Code for non-developers — you assign work and review results, not chat back and forth. Available on Pro, Team, and Enterprise plans. This is where the agent pattern starts reaching business professionals, not just engineers.
+      Key insight: the same patterns that transformed coding apply to all knowledge work. Cowork is Claude Code for non-developers — you assign work and review results, not chat back and forth. This is where the agent pattern starts reaching business professionals, not just engineers. The interaction model shifts from "chatbot" to "coworker."
     </aside>
   </section>
 
@@ -208,13 +207,11 @@
         <span class="stat-label">faster at<br>problem-solving</span>
       </div>
     </div>
-    <p style="margin-top: 1em; text-align: center; font-size: 0.7em; color: #aaa;">
-      Deployed at Goldman Sachs, Santander, Nubank<br>
-      Excels at clear-requirement tasks (4–8h junior engineer work)
-    </p>
-    <p style="margin-top: 0.8em; text-align: center; font-size: 0.75em; color: #90caf9;">
-      Not a tool you orchestrate — an agent you <em>assign work to</em>.
-    </p>
+    <ul style="margin-top: 1em; text-align: left;">
+      <li>Goldman Sachs, Santander, Nubank</li>
+      <li>Clear-requirement tasks · 4–8h junior engineer work</li>
+      <li style="color: #90caf9;">An agent you <em>assign work to</em> — not a tool you orchestrate</li>
+    </ul>
     <aside class="notes">
       Devin represents a different paradigm — not a tool you orchestrate but an autonomous agent you assign work to. 67% of PRs merged is up from 34% a year ago — real improvement, real production use. Deployed at major financial institutions. Excels at clear-requirement tasks a junior engineer would take 4-8 hours on. This is the "AI employee" model in practice today.
     </aside>
@@ -225,20 +222,26 @@
     <p class="dim">Karpathy — February 2026</p>
     <div class="img-right" style="margin-top: 0.5em;">
       <div class="content">
-        <blockquote style="padding: 0.3em 0.8em; font-size: 0.7em;">
-          <p style="margin: 0;">LLMs → LLM Agents → <strong>Claws</strong></p>
-          <p style="margin: 0.3em 0 0 0;">"Claws are now a new layer on top of LLM agents, taking the orchestration, scheduling, context, tool calls and a kind of persistence to a next level."</p>
-        </blockquote>
-        <div class="two-col" style="margin-top: 0.6em; font-size: 0.85em;">
+        <p style="font-size: 0.75em; color: #90caf9; margin-bottom: 0.6em;">LLMs → LLM Agents → <strong>Claws</strong></p>
+        <ul>
+          <li>Persistent AI orchestrator wired to your tools</li>
+          <li>Calendar, email, browser, messaging (WhatsApp, Slack, Signal…)</li>
+          <li>Built on MCP & Skills</li>
+        </ul>
+        <div class="two-col" style="margin-top: 0.8em; font-size: 0.85em;">
           <div>
             <h3 style="margin-bottom: 0.2em;">OpenClaw</h3>
-            <p style="font-size: 0.7em; line-height: 1.4;">~400K lines · WhatsApp, Telegram, Slack, Signal, iMessage…<br>
-            <span style="color: #888;">→ open-source foundation</span></p>
+            <ul>
+              <li>~400K lines · broad integrations</li>
+              <li style="color: #888;">Moving to open-source foundation</li>
+            </ul>
           </div>
           <div>
             <h3 style="margin-bottom: 0.2em;">NanoClaw</h3>
-            <p style="font-size: 0.7em; line-height: 1.4;">~4K lines · containerized<br>
-            "Fits in my head and that of AI agents" — Karpathy</p>
+            <ul>
+              <li>~4K lines · containerized</li>
+              <li style="color: #888;">"Fits in my head" — Karpathy</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -248,7 +251,7 @@
       </div>
     </div>
     <aside class="notes">
-      Karpathy's layering model: LLMs → LLM Agents → Claws. A Claw is a locally-hosted AI assistant wired to your tools — calendar, email, browser, messaging. Not a chat window but a persistent orchestrator. OpenClaw is the full-featured version (~400K lines, broad integrations, moving to open-source foundation). NanoClaw is Karpathy's minimalist alternative — ~4K lines, designed to be fully understandable by both humans and AI agents. The 🦞 emoji is the symbol. This is where MCP and Skills become critical infrastructure.
+      Karpathy's layering model: LLMs → LLM Agents → Claws. A Claw is a locally-hosted AI assistant wired to your tools — calendar, email, browser, messaging. Not a chat window but a persistent orchestrator. Full Karpathy quote: "Claws are now a new layer on top of LLM agents, taking the orchestration, scheduling, context, tool calls and a kind of persistence to a next level." OpenClaw is the full-featured version (~400K lines, broad integrations, moving to open-source foundation). NanoClaw is Karpathy's minimalist alternative — ~4K lines, designed to be fully understandable by both humans and AI agents. This is where MCP and Skills become critical infrastructure.
     </aside>
   </section>
 
@@ -256,17 +259,13 @@
     <h2>AI Will Structure<br>the Unstructured</h2>
     <div class="img-right" style="margin-top: 0.5em;">
       <div class="content">
-        <p>Why AI agents work well for code:<br>
-        code is <span class="highlight">structured and verifiable</span> — tests, compilers, type checkers.</p>
-        <p style="margin-top: 1em;">AI will use its own SWE capabilities to <strong>close this gap</strong> —<br>
-        structuring non-coding work, making it API-addressable, testable.</p>
-        <p style="margin-top: 1em; color: #90caf9;">
-          Digital transformation on steroids.<br>
-          <span style="font-size: 0.85em; color: #aaa;">A trend that's been running for decades — massively accelerated.</span>
-        </p>
-        <p style="margin-top: 1em; font-size: 0.7em; color: #aaa;">
-          Edge cases? Escalate — including spawning human contractors when needed.
-        </p>
+        <ul>
+          <li>AI agents work well for code — it's <span class="highlight">structured and verifiable</span></li>
+          <li>AI will use its SWE capabilities to close the gap for non-coding work</li>
+          <li>Make everything API-addressable, testable, automatable</li>
+          <li style="color: #90caf9;">Digital transformation on steroids</li>
+          <li style="color: #aaa;">Edge cases? Escalate — including spawning human contractors</li>
+        </ul>
       </div>
       <div class="visual">
         <div style="background: rgba(100,181,246,0.06); border: 1px solid #334; border-radius: 10px; padding: 1em 0.8em; font-size: 0.42em; color: #90caf9; text-align: center; width: 160px;">
@@ -282,7 +281,7 @@
       </div>
     </div>
     <aside class="notes">
-      This is a key observation: AI agents work well for code because code is structured and verifiable. Non-coding knowledge work — emails, documents, planning — lacks this. But AI itself will close this gap. Using its own software engineering capabilities, AI will accelerate digital transformation — structuring previously unstructured work, making it API-addressable and testable. This is putting on steroids a trend that's been running for decades. The question of whether AI handles "fuzzy" work well becomes less relevant as less work remains fuzzy. For genuine edge cases, AI systems can escalate — including spawning human contractors via platforms like Upwork.
+      This is a key observation: AI agents work well for code because code is structured and verifiable — tests, compilers, type checkers. Non-coding knowledge work — emails, documents, planning — lacks this. But AI itself will close this gap. Using its own software engineering capabilities, AI will accelerate digital transformation — structuring previously unstructured work, making it API-addressable and testable. This is putting on steroids a trend that's been running for decades. The question of whether AI handles "fuzzy" work well becomes less relevant as less work remains fuzzy. For genuine edge cases, AI systems can escalate — including spawning human contractors via platforms like Upwork.
     </aside>
   </section>
 
@@ -290,14 +289,18 @@
     <h2>AI Workers, Not AI Assistants</h2>
     <div style="display: flex; gap: 2em; align-items: flex-start; margin-top: 0.5em;">
       <div style="flex: 1;">
-        <p style="font-size: 0.7em;">The natural evolution: <strong>long-lived AI workers with their own accounts</strong>. Own email, calendar, project tools. Share items as with a colleague. Assign work. Review output. Grant scoped access.</p>
-        <p style="font-size: 0.7em; margin-top: 0.8em; color: #90caf9;">
-          <strong>OpenAI Frontier</strong> (Feb 2026) is already building this —<br>
-          enterprise platform to deploy AI agents as workers with onboarding, shared context, and permissions. Uber, Intuit, State Farm among first customers.
-        </p>
-        <p style="font-size: 0.6em; color: #aaa; margin-top: 0.8em;">
-          Accounts tagged as AI, linked to human principal, clear escalation paths.<br>
-          <span style="color: #ffd54f;">The organizational plumbing is simple. The cultural shift is the bigger part.</span>
+        <ul>
+          <li><strong>Long-lived AI workers with their own accounts</strong></li>
+          <li>Own email, calendar, project tools — scoped access</li>
+          <li>Assign work, review output — like a human colleague</li>
+        </ul>
+        <ul style="margin-top: 0.8em;">
+          <li style="color: #90caf9;"><strong>OpenAI Frontier</strong> (Feb 2026) — already building this</li>
+          <li style="color: #aaa;">Onboarding, shared context, permissions</li>
+          <li style="color: #aaa;">Uber, Intuit, State Farm among first customers</li>
+        </ul>
+        <p style="font-size: 0.65em; color: #ffd54f; margin-top: 0.8em;">
+          The organizational plumbing is simple. The cultural shift is the bigger part.
         </p>
       </div>
       <div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.4em; padding-top: 0.5em;">
@@ -314,7 +317,7 @@
       </div>
     </div>
     <aside class="notes">
-      The Claws approach raises a security question — giving AI persistent access to your personal credentials is inherently exposed. A more natural evolution: long-lived AI workers with their own accounts, their own email, calendar, project tools. You share specific items as you would with a human colleague. OpenAI Frontier, launched Feb 2026, is already building exactly this — an enterprise platform to deploy AI agents as workers with onboarding, shared business context, and permissions. Uber, Intuit, State Farm among the first customers. BCG, McKinsey, Accenture, Capgemini are Frontier Alliance partners deploying it. The METR trajectory grounds this: doubling every ~123 days means week-long autonomous tasks are plausible by late 2026. The accountability model is straightforward: AI accounts tagged as such, linked to human principals, clear escalation paths. We're already seeing this in customer service. The organizational plumbing is simple; the cultural adjustment is the bigger shift.
+      The Claws approach raises a security question — giving AI persistent access to your personal credentials is inherently exposed. A more natural evolution: long-lived AI workers with their own accounts, their own email, calendar, project tools. You share specific items as you would with a human colleague. OpenAI Frontier, launched Feb 2026, is already building exactly this — an enterprise platform to deploy AI agents as workers with onboarding, shared business context, and permissions. Uber, Intuit, State Farm among the first customers. BCG, McKinsey, Accenture, Capgemini are Frontier Alliance partners deploying it. The METR trajectory grounds this: doubling every ~123 days means week-long autonomous tasks are plausible by late 2026. Accounts tagged as AI, linked to human principals, clear escalation paths. We're already seeing this in customer service. The organizational plumbing is simple; the cultural adjustment is the bigger shift.
     </aside>
   </section>
 
@@ -337,11 +340,11 @@
   <section>
     <h2>Questions for the Workshop</h2>
     <ul>
-      <li><strong>From prompting to orchestrating</strong> — MCP, skills, agent coordination, context engineering. How does course structure reflect this?</li>
-      <li><strong>Non-coders need this now</strong> — Cowork and Claws make agent patterns a general professional skill</li>
-      <li><strong>AI will structure the unstructured</strong> — what does that mean for the professional roles we're training people for?</li>
-      <li><strong>The "AI team member" model</strong> — professional competence shifts toward management and oversight</li>
-      <li><strong>Curriculum agility</strong> — six months ago, "Claws" didn't exist. How do we teach in a landscape that moves this fast?</li>
+      <li><strong>From prompting to orchestrating</strong> — how does course structure reflect this?</li>
+      <li><strong>Non-coders need this now</strong> — agent patterns are a general professional skill</li>
+      <li><strong>AI will structure the unstructured</strong> — what does this mean for the roles we train people for?</li>
+      <li><strong>The "AI team member" model</strong> — competence shifts toward management and oversight</li>
+      <li><strong>Curriculum agility</strong> — "Claws" didn't exist six months ago</li>
     </ul>
     <aside class="notes">
       These are provocations, not recommendations. Open the floor here. The key tension: we need to teach durable skills (systems thinking, trust calibration, task decomposition) in a landscape where specific tools change every few months. Also worth noting: if AI turns non-coding work into coding work, and AI team members become the norm, what does "professional competence" even mean in 2-3 years?
