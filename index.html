@@ -101,7 +101,7 @@
     <div class="two-col" style="margin-top: 1em;">
       <div style="text-align: center;">
         <span class="stat">84.6%</span>
-        <span class="stat-label">Gemini 3 Deep Think on ARC-AGI2<br>≈ average human</span>
+        <span class="stat-label">Gemini 3 Deep Think on ARC-AGI2<br>well above average human (~60%)</span>
       </div>
       <div style="text-align: center;">
         <span class="stat">14.5h</span>
@@ -109,7 +109,7 @@
       </div>
     </div>
     <aside class="notes">
-      ARC-AGI2 is designed to resist brute-force scaling - yet Gemini 3 Deep Think now matches average human performance. METR's time horizon metric doubled from 4 minutes to 14.5 hours in under two years, doubling every ~123 days. At that rate, week-long autonomous tasks become plausible by late 2026. The models are not the bottleneck anymore.
+      ARC-AGI2 is designed to resist brute-force scaling - yet Gemini 3 Deep Think now scores well above average human performance (~60%). METR's 50% time horizon - the task length where the model succeeds half the time - went from 4 minutes to 14.5 hours in under two years, doubling every ~123 days. At that rate, week-long autonomous tasks become plausible by late 2026. The models are not the bottleneck anymore.
     </aside>
   </section>
 
@@ -118,13 +118,12 @@
     <ul style="margin-top: 1.5em;">
       <li>Long-term Context Management</li>
       <li>Online Learning</li>
-      <li>Hallucinations</li>
     </ul>
     <p style="margin-top: 1.5em; font-size: 0.65em; color: #ffd54f; text-align: center;">
       Everything else is tractable engineering - and it more than compensates.
     </p>
     <aside class="notes">
-      Context: models have finite context windows and no true memory across sessions - engineering workarounds (compaction, memory files, RAG) help but there's still a discontinuity. Online learning: models can't update their weights from experience at inference time - every session starts from scratch. These two may ultimately share a single solution (E2E-TTT is a promising research direction). Hallucinations: being addressed via grounding (RAG, tool use, citations) and progress on world models. Everything else - tool access, workflow encoding, safety, parallelism - is tractable engineering moving at extraordinary speed.
+      Context: models have finite context windows and no true memory across sessions - engineering workarounds (compaction, memory files, RAG) help but there's still a discontinuity. Online learning: models can't update their weights from experience at inference time - every session starts from scratch. These two may ultimately share a single solution (E2E-TTT is a promising research direction). Everything else - tool access, workflow encoding, safety, parallelism, and even hallucinations (being addressed via grounding, tool use, citations) - is tractable engineering moving at extraordinary speed.
     </aside>
   </section>
 
@@ -182,11 +181,11 @@
       <span class="stat-label">of PRs merged (was 34% a year ago)</span>
     </div>
     <ul style="margin-top: 1em; text-align: left;">
-      <li>Goldman Sachs, Santander, Nubank</li>
+      <li>Goldman Sachs, Citi, Nubank</li>
       <li>An agent you <em>assign work to</em> - not a tool you orchestrate</li>
     </ul>
     <aside class="notes">
-      Devin represents a different paradigm from Claude Code - not a tool you orchestrate but an autonomous agent you assign work to. 18 months in: 67% of PRs merged (vs 34% a year ago), 4x faster at problem-solving. Deployed at Goldman Sachs, Santander, Nubank. Excels at clear-requirement tasks a junior engineer would take 4-8 hours on. This is the "AI employee" model in practice.
+      Devin represents a different paradigm from Claude Code - not a tool you orchestrate but an autonomous agent you assign work to. 18 months in: 67% of PRs merged (vs 34% a year ago), 4x faster at problem-solving. Deployed at Goldman Sachs, Citi, Nubank. Excels at clear-requirement tasks a junior engineer would take 4-8 hours on. This is the "AI employee" model in practice.
     </aside>
   </section>
 
@@ -195,7 +194,7 @@
     <div class="img-right" style="margin-top: 1em;">
       <div class="content">
         <ul>
-          <li>Anthropic built a <strong>C compiler</strong> with parallel agents</li>
+          <li>Anthropic built a <strong>C compiler</strong> with 16 parallel agents</li>
           <li><strong>Gas Town</strong> (Yegge) - 20-30 parallel agents</li>
         </ul>
       </div>
@@ -306,10 +305,10 @@
     <ul>
       <li>From prompting to orchestration</li>
       <li>Professional competence as management and oversight</li>
-      <li>"Clawdbot" is 4 months old and already renamed</li>
+      <li>"Clawdbot" is 4 months old and already renamed twice</li>
     </ul>
     <aside class="notes">
-      These are provocations for the group, not recommendations. The pace point is real: Clawdbot launched Nov 2025 and was already rebranded to OpenClaw by Feb 2026. Six months ago, "Claws" wasn't a concept and Cowork didn't exist. How do we build curriculum that stays relevant in a landscape moving this fast?
+      These are provocations for the group, not recommendations. The pace point is real: Clawdbot launched Nov 2025, got a trademark notice from Anthropic, briefly became Moltbot, then settled on OpenClaw by Jan 30 2026 - three names in two months. Six months ago, "Claws" wasn't a concept and Cowork didn't exist. How do we build curriculum that stays relevant in a landscape moving this fast?
     </aside>
   </section>
 

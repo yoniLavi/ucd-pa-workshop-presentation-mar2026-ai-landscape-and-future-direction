@@ -6,7 +6,7 @@
 
 ## Narrative Arc
 
-**Opening:** There are only two *fundamental* limitations left — and everything else is tractable engineering progressing at breakneck speed.
+**Opening:** There are only two *fundamental* limitations left — and everything else (including hallucinations) is tractable engineering progressing at breakneck speed.
 
 **Middle:** Here's what that engineering looks like right now (Claude Code ecosystem, agent swarms, Cowork, Claws) — and a key insight about where non-coding work is heading.
 
@@ -16,7 +16,7 @@
 
 ## 1. The Two Real Limitations (~1.5 min)
 
-Open with the big picture: the AI models themselves are remarkably capable. ARC-AGI2 is essentially saturated — Gemini 3 Deep Think hits 84.6% at $13.62, around average human capability. METR shows Claude Opus 4.6 reliably completing tasks that would take a skilled human 14.5 hours, with the 50% time horizon doubling every ~123 days (up from 4 minutes in early 2024). Reasoning and reliability are improving rapidly and predictably — they're not a fundamental barrier.
+Open with the big picture: the AI models themselves are remarkably capable. ARC-AGI2 is designed to resist brute-force scaling — yet Gemini 3 Deep Think hits 84.6% at $13.62, well above average human performance (~60%) and approaching the ARC Prize target of 85%. METR's 50% time horizon — the task length where the model succeeds half the time — shows Claude Opus 4.6 at 14.5 hours, doubling every ~123 days (up from 4 minutes in early 2024). Reasoning and reliability are improving rapidly and predictably — they're not a fundamental barrier.
 
 What's actually holding us back are exactly **two fundamental limitations**:
 
@@ -54,7 +54,7 @@ Claude Code established the pattern now reshaping everything: give an AI agent r
 
 ### Parallel agents & teams:
 
-Single-agent work hit a ceiling. Claude Code now supports up to 5 simultaneous sub-agents on a shared codebase — specializing, coordinating via shared task lists, claiming and reporting work autonomously. Anthropic's own team built a C compiler this way.
+Single-agent work hit a ceiling. Claude Code now supports up to 5 simultaneous sub-agents on a shared codebase — specializing, coordinating via shared task lists, claiming and reporting work autonomously. Anthropic's own team built a C compiler with 16 parallel agents this way.
 
 This is where the "copilot" metaphor breaks down — we're talking about *delegation and orchestration*, not autocomplete.
 
@@ -78,7 +78,7 @@ The developer role transforms from individual coder to "factory operator managin
 
 ### Devin: The "AI Employee" Model
 
-Devin (Cognition) represents a different paradigm — not a tool *you* orchestrate but an autonomous agent you *assign work to*. 18 months in: 67% of PRs now merged (vs 34% a year ago), 4x faster at problem-solving, deployed at Goldman Sachs, Santander, Nubank. Excels at clear-requirement tasks a junior engineer would take 4-8 hours on.
+Devin (Cognition) represents a different paradigm — not a tool *you* orchestrate but an autonomous agent you *assign work to*. 18 months in: 67% of PRs now merged (vs 34% a year ago), 4x faster at problem-solving, deployed at Goldman Sachs, Citi, Nubank. Excels at clear-requirement tasks a junior engineer would take 4-8 hours on.
 
 ### Claws: The Personal AI Layer (Karpathy, Feb 2026)
 
@@ -152,7 +152,7 @@ The METR time-horizon trajectory grounds this concretely: doubling every ~123 da
 
 4. **The "AI team member" model changes the job description** — if the near future involves managing AI workers with their own identities and accounts, professional competence starts to look more like management and oversight than individual execution.
 
-5. **The pace demands curriculum agility** — six months ago, "Claws" wasn't a concept and Cowork didn't exist. How do we teach in a landscape that moves this fast?
+5. **The pace demands curriculum agility** — six months ago, "Claws" wasn't a concept and Cowork didn't exist. Clawdbot launched Nov 2025, got a trademark notice, briefly became Moltbot, then settled on OpenClaw by Jan 30 — three names in two months. How do we teach in a landscape that moves this fast?
 
 ---
 
